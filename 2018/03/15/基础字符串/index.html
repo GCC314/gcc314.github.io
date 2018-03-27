@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-Hans"><head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -24,8 +16,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -44,7 +36,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -76,7 +68,7 @@
   
     
     
-    <link href="fonts.googleapis.com/css?family=Comfortaa:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="fonts.googleapis.com/css?family=Comfortaa:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -84,9 +76,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -104,7 +96,7 @@
 
 
 
-  <meta name="keywords" content="OI,板子,字符串," />
+  <meta name="keywords" content="OI,&#x5B57;&#x7B26;&#x4E32;,&#x677F;&#x5B50;,">
 
 
 
@@ -115,19 +107,19 @@
 
 
 
-<meta name="description" content="KMPKMP(Knuth - Morris - Pratt)算法是一种能在$\Theta(n + m)$时间内进行字符串匹配的算法。 其基本思想是构造一个Next[]数组，表示在i位置匹配串失配时跳转到Next[i]。 举例如下：  有字符串A : a a a a b a b a b b a 字符串B : a b a b b 约定第一个字符序号为1。 然后显然A在1 2 3处不匹配。     In">
-<meta name="keywords" content="OI,板子,字符串">
+<meta name="description" content="KMPKMP(Knuth - Morris - Pratt)&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x80FD;&#x5728;$\Theta(n + m)$&#x65F6;&#x95F4;&#x5185;&#x8FDB;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x7684;&#x7B97;&#x6CD5;&#x3002; &#x5176;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x662F;&#x6784;&#x9020;&#x4E00;&#x4E2A;Next[]&#x6570;&#x7EC4;&#xFF0C;&#x8868;&#x793A;&#x5728;i&#x4F4D;&#x7F6E;&#x5339;&#x914D;&#x4E32;&#x5931;&#x914D;&#x65F6;&#x8DF3;&#x8F6C;&#x5230;Next[i]&#x3002; &#x4E3E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;  &#x6709;&#x5B57;&#x7B26;&#x4E32;A : a a a a b a b a b b a &#x5B57;&#x7B26;&#x4E32;B : a b a b b &#x7EA6;&#x5B9A;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5E8F;&#x53F7;&#x4E3A;1&#x3002; &#x7136;&#x540E;&#x663E;&#x7136;A&#x5728;1 2 3&#x5904;&#x4E0D;&#x5339;&#x914D;&#x3002;     In">
+<meta name="keywords" content="OI,&#x5B57;&#x7B26;&#x4E32;,&#x677F;&#x5B50;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基础字符串">
-<meta property="og:url" content="http://gcc314.github.io/2018/03/15/基础字符串/index.html">
+<meta property="og:title" content="&#x57FA;&#x7840;&#x5B57;&#x7B26;&#x4E32;">
+<meta property="og:url" content="http://gcc314.github.io/2018/03/15/&#x57FA;&#x7840;&#x5B57;&#x7B26;&#x4E32;/index.html">
 <meta property="og:site_name" content="Euphoria">
-<meta property="og:description" content="KMPKMP(Knuth - Morris - Pratt)算法是一种能在$\Theta(n + m)$时间内进行字符串匹配的算法。 其基本思想是构造一个Next[]数组，表示在i位置匹配串失配时跳转到Next[i]。 举例如下：  有字符串A : a a a a b a b a b b a 字符串B : a b a b b 约定第一个字符序号为1。 然后显然A在1 2 3处不匹配。     In">
+<meta property="og:description" content="KMPKMP(Knuth - Morris - Pratt)&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x80FD;&#x5728;$\Theta(n + m)$&#x65F6;&#x95F4;&#x5185;&#x8FDB;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x7684;&#x7B97;&#x6CD5;&#x3002; &#x5176;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x662F;&#x6784;&#x9020;&#x4E00;&#x4E2A;Next[]&#x6570;&#x7EC4;&#xFF0C;&#x8868;&#x793A;&#x5728;i&#x4F4D;&#x7F6E;&#x5339;&#x914D;&#x4E32;&#x5931;&#x914D;&#x65F6;&#x8DF3;&#x8F6C;&#x5230;Next[i]&#x3002; &#x4E3E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;  &#x6709;&#x5B57;&#x7B26;&#x4E32;A : a a a a b a b a b b a &#x5B57;&#x7B26;&#x4E32;B : a b a b b &#x7EA6;&#x5B9A;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5E8F;&#x53F7;&#x4E3A;1&#x3002; &#x7136;&#x540E;&#x663E;&#x7136;A&#x5728;1 2 3&#x5904;&#x4E0D;&#x5339;&#x914D;&#x3002;     In">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/0060lm7Tly1fpd96td5szj30b4028web.jpg">
 <meta property="og:updated_time" content="2018-03-15T01:42:35.623Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基础字符串">
-<meta name="twitter:description" content="KMPKMP(Knuth - Morris - Pratt)算法是一种能在$\Theta(n + m)$时间内进行字符串匹配的算法。 其基本思想是构造一个Next[]数组，表示在i位置匹配串失配时跳转到Next[i]。 举例如下：  有字符串A : a a a a b a b a b b a 字符串B : a b a b b 约定第一个字符序号为1。 然后显然A在1 2 3处不匹配。     In">
+<meta name="twitter:title" content="&#x57FA;&#x7840;&#x5B57;&#x7B26;&#x4E32;">
+<meta name="twitter:description" content="KMPKMP(Knuth - Morris - Pratt)&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x80FD;&#x5728;$\Theta(n + m)$&#x65F6;&#x95F4;&#x5185;&#x8FDB;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x7684;&#x7B97;&#x6CD5;&#x3002; &#x5176;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x662F;&#x6784;&#x9020;&#x4E00;&#x4E2A;Next[]&#x6570;&#x7EC4;&#xFF0C;&#x8868;&#x793A;&#x5728;i&#x4F4D;&#x7F6E;&#x5339;&#x914D;&#x4E32;&#x5931;&#x914D;&#x65F6;&#x8DF3;&#x8F6C;&#x5230;Next[i]&#x3002; &#x4E3E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;  &#x6709;&#x5B57;&#x7B26;&#x4E32;A : a a a a b a b a b b a &#x5B57;&#x7B26;&#x4E32;B : a b a b b &#x7EA6;&#x5B9A;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5E8F;&#x53F7;&#x4E3A;1&#x3002; &#x7136;&#x540E;&#x663E;&#x7136;A&#x5728;1 2 3&#x5904;&#x4E0D;&#x5339;&#x914D;&#x3002;     In">
 <meta name="twitter:image" content="http://ww3.sinaimg.cn/large/0060lm7Tly1fpd96td5szj30b4028web.jpg">
 
 
@@ -158,13 +150,13 @@
 
 
 
-  <link rel="canonical" href="http://gcc314.github.io/2018/03/15/基础字符串/"/>
+  <link rel="canonical" href="http://gcc314.github.io/2018/03/15/&#x57FA;&#x7840;&#x5B57;&#x7B26;&#x4E32;/">
 
 
 
 
 
-  <title>基础字符串 | Euphoria</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>&#x57FA;&#x7840;&#x5B57;&#x7B26;&#x4E32; | Euphoria</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -175,7 +167,7 @@
 
 
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -185,20 +177,20 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Euphoria</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">GCC314's blog</p>
+        <p class="site-subtitle">GCC314&apos;s blog</p>
       
   </div>
 
@@ -221,9 +213,9 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            &#x9996;&#x9875;
           </a>
         </li>
       
@@ -231,9 +223,9 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            归档
+            &#x5F52;&#x6863;
           </a>
         </li>
       
@@ -265,20 +257,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gcc314.github.io/2018/03/15/基础字符串/">
+    <link itemprop="mainEntityOfPage" href="http://gcc314.github.io/2018/03/15/&#x57FA;&#x7840;&#x5B57;&#x7B26;&#x4E32;/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GCC314">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Euphoria">
     </span>
 
@@ -287,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基础字符串</h1>
+          <h1 class="post-title" itemprop="name headline">&#x57FA;&#x7840;&#x5B57;&#x7B26;&#x4E32;</h1>
         
 
         <div class="post-meta">
@@ -297,9 +289,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">&#x53D1;&#x8868;&#x4E8E;</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T02:59:50+08:00">
+              <time title="&#x521B;&#x5EFA;&#x4E8E;" itemprop="dateCreated datePublished" datetime="2018-03-15T02:59:50+08:00">
                 2018-03-14
               </time>
             
@@ -337,14 +329,14 @@
       
 
       
-        <h2 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h2><p>KMP(Knuth - Morris - Pratt)算法是一种能在$\Theta(n + m)$时间内进行字符串匹配的算法。</p>
-<p>其基本思想是构造一个Next[]数组，<em>表示在i位置匹配串失配时跳转到Next[i]</em>。</p>
-<p>举例如下：</p>
+        <h2 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h2><p>KMP(Knuth - Morris - Pratt)&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x80FD;&#x5728;$\Theta(n + m)$&#x65F6;&#x95F4;&#x5185;&#x8FDB;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x7684;&#x7B97;&#x6CD5;&#x3002;</p>
+<p>&#x5176;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x662F;&#x6784;&#x9020;&#x4E00;&#x4E2A;Next[]&#x6570;&#x7EC4;&#xFF0C;<em>&#x8868;&#x793A;&#x5728;i&#x4F4D;&#x7F6E;&#x5339;&#x914D;&#x4E32;&#x5931;&#x914D;&#x65F6;&#x8DF3;&#x8F6C;&#x5230;Next[i]</em>&#x3002;</p>
+<p>&#x4E3E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
 <blockquote>
-<p>有字符串A : a a a a b a b a b b a</p>
-<p>字符串B : a b a b b</p>
-<p>约定第一个字符序号为1。</p>
-<p>然后显然A在1 2 3处不匹配。</p>
+<p>&#x6709;&#x5B57;&#x7B26;&#x4E32;A : a a a a b a b a b b a</p>
+<p>&#x5B57;&#x7B26;&#x4E32;B : a b a b b</p>
+<p>&#x7EA6;&#x5B9A;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5E8F;&#x53F7;&#x4E3A;1&#x3002;</p>
+<p>&#x7136;&#x540E;&#x663E;&#x7136;A&#x5728;1 2 3&#x5904;&#x4E0D;&#x5339;&#x914D;&#x3002;</p>
 <div class="table-container">
 <table>
 <thead>
@@ -385,8 +377,8 @@
 </tbody>
 </table>
 </div>
-<p>当B以4为起点，匹配到8时失配。这时如果从5开始重新匹配显然复杂度不佳。</p>
-<p>这时我们观察到6 7处的字符与4 5处相同，即我们可以从6开始匹配。</p>
+<p>&#x5F53;B&#x4EE5;4&#x4E3A;&#x8D77;&#x70B9;&#xFF0C;&#x5339;&#x914D;&#x5230;8&#x65F6;&#x5931;&#x914D;&#x3002;&#x8FD9;&#x65F6;&#x5982;&#x679C;&#x4ECE;5&#x5F00;&#x59CB;&#x91CD;&#x65B0;&#x5339;&#x914D;&#x663E;&#x7136;&#x590D;&#x6742;&#x5EA6;&#x4E0D;&#x4F73;&#x3002;</p>
+<p>&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x89C2;&#x5BDF;&#x5230;6 7&#x5904;&#x7684;&#x5B57;&#x7B26;&#x4E0E;4 5&#x5904;&#x76F8;&#x540C;&#xFF0C;&#x5373;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;6&#x5F00;&#x59CB;&#x5339;&#x914D;&#x3002;</p>
 <div class="table-container">
 <table>
 <thead>
@@ -427,12 +419,12 @@
 </tbody>
 </table>
 </div>
-<p>此时A与B匹配。</p>
+<p>&#x6B64;&#x65F6;A&#x4E0E;B&#x5339;&#x914D;&#x3002;</p>
 </blockquote>
-<p>这个例子给我们以启示：如果<em>根据匹配串的特点</em>，当在某一点失配时直接跳到已经被部分匹配的区域继续匹配，即可以得到高效算法。</p>
-<p>如何构造Next[]?</p>
-<p>根据算法思路，我们要拿<strong>匹配串匹配自己</strong>。Next[1]显然为0。所以我们从2开始推：</p>
-<p>上例中B的Next值如下：</p>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x7ED9;&#x6211;&#x4EEC;&#x4EE5;&#x542F;&#x793A;&#xFF1A;&#x5982;&#x679C;<em>&#x6839;&#x636E;&#x5339;&#x914D;&#x4E32;&#x7684;&#x7279;&#x70B9;</em>&#xFF0C;&#x5F53;&#x5728;&#x67D0;&#x4E00;&#x70B9;&#x5931;&#x914D;&#x65F6;&#x76F4;&#x63A5;&#x8DF3;&#x5230;&#x5DF2;&#x7ECF;&#x88AB;&#x90E8;&#x5206;&#x5339;&#x914D;&#x7684;&#x533A;&#x57DF;&#x7EE7;&#x7EED;&#x5339;&#x914D;&#xFF0C;&#x5373;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x9AD8;&#x6548;&#x7B97;&#x6CD5;&#x3002;</p>
+<p>&#x5982;&#x4F55;&#x6784;&#x9020;Next[]?</p>
+<p>&#x6839;&#x636E;&#x7B97;&#x6CD5;&#x601D;&#x8DEF;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x62FF;<strong>&#x5339;&#x914D;&#x4E32;&#x5339;&#x914D;&#x81EA;&#x5DF1;</strong>&#x3002;Next[1]&#x663E;&#x7136;&#x4E3A;0&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x4ECE;2&#x5F00;&#x59CB;&#x63A8;&#xFF1A;</p>
+<p>&#x4E0A;&#x4F8B;&#x4E2D;B&#x7684;Next&#x503C;&#x5982;&#x4E0B;&#xFF1A;</p>
 <div class="table-container">
 <table>
 <thead>
@@ -465,18 +457,18 @@
 </tbody>
 </table>
 </div>
-<p>最后给出板子(<a href="https://www.luogu.org/problemnew/show/P3375" target="_blank" rel="noopener">Luogu P3375</a>)：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1000010</span></span><br><span class="line"><span class="keyword">char</span> S[N],T[N];<span class="keyword">int</span> next[N],s,t;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="title">build_next</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>,j = <span class="number">0</span>;i &lt;= t;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(j &amp;&amp; T[i] != T[j + <span class="number">1</span>]) j = next[j];</span><br><span class="line">        <span class="keyword">if</span>(T[j + <span class="number">1</span>] == T[i])j++;</span><br><span class="line">        next[i] = j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,S + <span class="number">1</span>);<span class="built_in">scanf</span>(<span class="string">"%s"</span>,T + <span class="number">1</span>);s = <span class="built_in">strlen</span>(S + <span class="number">1</span>),t = <span class="built_in">strlen</span>(T + <span class="number">1</span>);</span><br><span class="line">    build_next();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>,j = <span class="number">0</span>;i &lt;= s;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(j &amp;&amp; S[i] != T[j + <span class="number">1</span>]) j = next[j];</span><br><span class="line">        <span class="keyword">if</span>(T[j + <span class="number">1</span>] == S[i])j++;</span><br><span class="line">        <span class="keyword">if</span>(j == t)&#123;<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i - t + <span class="number">1</span>);j = next[j];&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= t;i++) <span class="built_in">printf</span>(<span class="string">"%d%c"</span>,next[i],<span class="string">" \n"</span>[i == t]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&#x6700;&#x540E;&#x7ED9;&#x51FA;&#x677F;&#x5B50;(<a href="https://www.luogu.org/problemnew/show/P3375" target="_blank" rel="noopener">Luogu P3375</a>)&#xFF1A;</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1000010</span></span><br><span class="line"><span class="keyword">char</span> S[N],T[N];<span class="keyword">int</span> next[N],s,t;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="title">build_next</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>,j = <span class="number">0</span>;i &lt;= t;i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">while</span>(j &amp;&amp; T[i] != T[j + <span class="number">1</span>]) j = next[j];</span><br><span class="line">        <span class="keyword">if</span>(T[j + <span class="number">1</span>] == T[i])j++;</span><br><span class="line">        next[i] = j;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,S + <span class="number">1</span>);<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,T + <span class="number">1</span>);s = <span class="built_in">strlen</span>(S + <span class="number">1</span>),t = <span class="built_in">strlen</span>(T + <span class="number">1</span>);</span><br><span class="line">    build_next();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>,j = <span class="number">0</span>;i &lt;= s;i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">while</span>(j &amp;&amp; S[i] != T[j + <span class="number">1</span>]) j = next[j];</span><br><span class="line">        <span class="keyword">if</span>(T[j + <span class="number">1</span>] == S[i])j++;</span><br><span class="line">        <span class="keyword">if</span>(j == t){<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i - t + <span class="number">1</span>);j = next[j];}</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= t;i++) <span class="built_in">printf</span>(<span class="string">&quot;%d%c&quot;</span>,next[i],<span class="string">&quot; \n&quot;</span>[i == t]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <hr>
-<h2 id="Manacher"><a href="#Manacher" class="headerlink" title="Manacher"></a>Manacher</h2><p>Manacher算法用来在$\Theta(n)$时间内计算字符串的最长回文串。</p>
-<p>首先由于长度为偶数的字符串的对称中心不在字符上，不方便研究，所以我们在字符串开头，结尾，以及字符之间添加不在字符表内的字符，如’#’。这样就可以转化为研究奇数长度的回文串了。</p>
-<p>我们可以用p[i]表示以i为对称轴的回文串长度，当我们要计算p[i]时，我们可以记录下之前的回文串到达的最右端距离mx和最右回文串的对称轴位置id。</p>
-<p>$mx \leq i$时显然只能暴力搞。</p>
-<p>否则如图：</p>
+<h2 id="Manacher"><a href="#Manacher" class="headerlink" title="Manacher"></a>Manacher</h2><p>Manacher&#x7B97;&#x6CD5;&#x7528;&#x6765;&#x5728;$\Theta(n)$&#x65F6;&#x95F4;&#x5185;&#x8BA1;&#x7B97;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6700;&#x957F;&#x56DE;&#x6587;&#x4E32;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x7531;&#x4E8E;&#x957F;&#x5EA6;&#x4E3A;&#x5076;&#x6570;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5BF9;&#x79F0;&#x4E2D;&#x5FC3;&#x4E0D;&#x5728;&#x5B57;&#x7B26;&#x4E0A;&#xFF0C;&#x4E0D;&#x65B9;&#x4FBF;&#x7814;&#x7A76;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x5F00;&#x5934;&#xFF0C;&#x7ED3;&#x5C3E;&#xFF0C;&#x4EE5;&#x53CA;&#x5B57;&#x7B26;&#x4E4B;&#x95F4;&#x6DFB;&#x52A0;&#x4E0D;&#x5728;&#x5B57;&#x7B26;&#x8868;&#x5185;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x5982;&#x2019;#&#x2019;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x8F6C;&#x5316;&#x4E3A;&#x7814;&#x7A76;&#x5947;&#x6570;&#x957F;&#x5EA6;&#x7684;&#x56DE;&#x6587;&#x4E32;&#x4E86;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;p[i]&#x8868;&#x793A;&#x4EE5;i&#x4E3A;&#x5BF9;&#x79F0;&#x8F74;&#x7684;&#x56DE;&#x6587;&#x4E32;&#x957F;&#x5EA6;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x8981;&#x8BA1;&#x7B97;p[i]&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BB0;&#x5F55;&#x4E0B;&#x4E4B;&#x524D;&#x7684;&#x56DE;&#x6587;&#x4E32;&#x5230;&#x8FBE;&#x7684;&#x6700;&#x53F3;&#x7AEF;&#x8DDD;&#x79BB;mx&#x548C;&#x6700;&#x53F3;&#x56DE;&#x6587;&#x4E32;&#x7684;&#x5BF9;&#x79F0;&#x8F74;&#x4F4D;&#x7F6E;id&#x3002;</p>
+<p>$mx \leq i$&#x65F6;&#x663E;&#x7136;&#x53EA;&#x80FD;&#x66B4;&#x529B;&#x641E;&#x3002;</p>
+<p>&#x5426;&#x5219;&#x5982;&#x56FE;&#xFF1A;</p>
 <p><img src="http://ww3.sinaimg.cn/large/0060lm7Tly1fpd96td5szj30b4028web.jpg"></p>
-<p>可得到$p_i = min(p_{2id - i},mx - i) \ (mx &gt; i)$ 。</p>
-<p>板子(<a href="https://www.luogu.org/problemnew/show/P3805" target="_blank" rel="noopener">Luogu P3805</a>)：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 41001100</span></span><br><span class="line"><span class="keyword">char</span> S[N],T[(N &lt;&lt; <span class="number">1</span>) + <span class="number">20</span>];<span class="keyword">int</span> p[N],s,t,mx = <span class="number">0</span>,id = <span class="number">0</span>,ml = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,S + <span class="number">1</span>);</span><br><span class="line">    s = <span class="built_in">strlen</span>(S + <span class="number">1</span>);</span><br><span class="line">    T[<span class="number">0</span>] = <span class="string">'$'</span>,T[<span class="number">2</span> * s + <span class="number">1</span>] = <span class="string">'#'</span>;<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= s;i++) T[i * <span class="number">2</span> - <span class="number">1</span>] = <span class="string">'#'</span>,T[i * <span class="number">2</span>] = S[i];t = <span class="number">2</span> * s + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= t;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(mx &gt; i) p[i] = <span class="built_in">std</span>::min(p[id * <span class="number">2</span> - i],mx - i);</span><br><span class="line">        <span class="keyword">else</span> p[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(T[i + p[i]] == T[i - p[i]])p[i]++;</span><br><span class="line">        <span class="keyword">if</span>(p[i] + i &gt; mx)mx = p[i] + i,id = i;</span><br><span class="line">        ml = <span class="built_in">std</span>::max(ml,p[i] - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ml);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>&#x53EF;&#x5F97;&#x5230;$p_i = min(p_{2id - i},mx - i) \ (mx &gt; i)$ &#x3002;</p>
+<p>&#x677F;&#x5B50;(<a href="https://www.luogu.org/problemnew/show/P3805" target="_blank" rel="noopener">Luogu P3805</a>)&#xFF1A;</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 41001100</span></span><br><span class="line"><span class="keyword">char</span> S[N],T[(N &lt;&lt; <span class="number">1</span>) + <span class="number">20</span>];<span class="keyword">int</span> p[N],s,t,mx = <span class="number">0</span>,id = <span class="number">0</span>,ml = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,S + <span class="number">1</span>);</span><br><span class="line">    s = <span class="built_in">strlen</span>(S + <span class="number">1</span>);</span><br><span class="line">    T[<span class="number">0</span>] = <span class="string">&apos;$&apos;</span>,T[<span class="number">2</span> * s + <span class="number">1</span>] = <span class="string">&apos;#&apos;</span>;<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= s;i++) T[i * <span class="number">2</span> - <span class="number">1</span>] = <span class="string">&apos;#&apos;</span>,T[i * <span class="number">2</span>] = S[i];t = <span class="number">2</span> * s + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= t;i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(mx &gt; i) p[i] = <span class="built_in">std</span>::min(p[id * <span class="number">2</span> - i],mx - i);</span><br><span class="line">        <span class="keyword">else</span> p[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(T[i + p[i]] == T[i - p[i]])p[i]++;</span><br><span class="line">        <span class="keyword">if</span>(p[i] + i &gt; mx)mx = p[i] + i,id = i;</span><br><span class="line">        ml = <span class="built_in">std</span>::max(ml,p[i] - <span class="number">1</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ml);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
       
     </div>
@@ -496,9 +488,9 @@
           
             <a href="/tags/OI/" rel="tag"># OI</a>
           
-            <a href="/tags/板子/" rel="tag"># 板子</a>
+            <a href="/tags/&#x5B57;&#x7B26;&#x4E32;/" rel="tag"># &#x5B57;&#x7B26;&#x4E32;</a>
           
-            <a href="/tags/字符串/" rel="tag"># 字符串</a>
+            <a href="/tags/&#x677F;&#x5B50;/" rel="tag"># &#x677F;&#x5B50;</a>
           
         </div>
       
@@ -511,8 +503,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/06/BZOJ-3157-BZOJ-3516-国王奇遇记/" rel="next" title="[BZOJ 3157][BZOJ 3516] 国王奇遇记">
-                <i class="fa fa-chevron-left"></i> [BZOJ 3157][BZOJ 3516] 国王奇遇记
+              <a href="/2018/03/06/BZOJ-3157-BZOJ-3516-&#x56FD;&#x738B;&#x5947;&#x9047;&#x8BB0;/" rel="next" title="[BZOJ 3157][BZOJ 3516] &#x56FD;&#x738B;&#x5947;&#x9047;&#x8BB0;">
+                <i class="fa fa-chevron-left"></i> [BZOJ 3157][BZOJ 3516] &#x56FD;&#x738B;&#x5947;&#x9047;&#x8BB0;
               </a>
             
           </div>
@@ -520,6 +512,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/25/Dinic/" rel="prev" title="Dinic">
+                Dinic <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -573,17 +569,17 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            &#x6587;&#x7AE0;&#x76EE;&#x5F55;
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            &#x7AD9;&#x70B9;&#x6982;&#x89C8;
           </li>
         </ul>
       
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">GCC314</p>
               <p class="site-description motion-element" itemprop="description">A blog for programming especially OI.</p>
@@ -596,8 +592,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">&#x65E5;&#x5FD7;</span>
                 </a>
               </div>
             
@@ -609,8 +605,8 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">&#x6807;&#x7B7E;</span>
                 </a>
               </div>
             
@@ -700,7 +696,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&#xA9; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -710,7 +706,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">&#x7531; <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> &#x5F3A;&#x529B;&#x9A71;&#x52A8;</div>
 
 
 
@@ -718,7 +714,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">&#x4E3B;&#x9898; &#x2014; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -732,7 +728,7 @@
 
 
         
-        <div width=400 height=150 vertical-align=top><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=2094509432&auto=0&height=90"></iframe></div>
+        <div width="400" height="150" vertical-align="top"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="110" src="//music.163.com/outchain/player?type=0&amp;id=2094509432&amp;auto=0&amp;height=90"></iframe></div>
       </div>
     </footer>
 
@@ -900,8 +896,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax --><script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
 
@@ -917,7 +912,7 @@
 <script type="text/javascript" src="custom_mathjax_source">
 </script>
 <!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script>
   
 
 
@@ -925,5 +920,6 @@
 
   
 
-</body>
-</html>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body></html><!-- hexo-inject:end -->

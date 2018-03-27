@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-Hans"><head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -24,8 +16,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -44,7 +36,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -76,7 +68,7 @@
   
     
     
-    <link href="fonts.googleapis.com/css?family=Comfortaa:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="fonts.googleapis.com/css?family=Comfortaa:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -84,9 +76,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -104,7 +96,7 @@
 
 
 
-  <meta name="keywords" content="OI,树,树的直径," />
+  <meta name="keywords" content="OI,&#x6811;,&#x6811;&#x7684;&#x76F4;&#x5F84;,">
 
 
 
@@ -115,18 +107,18 @@
 
 
 
-<meta name="description" content="题目大意：给定一棵n个节点带边权的树，求树的直径长和直径必经边的个数。  思路首先我们可以2次dfs求出一条直径和直径长度，第一问解决。显然直径必经边一定是一段连续路径。我们再写一个dfs求直径上的点向直径外的子树深度。从右往左遍历直径，如果子树深度等于到右端点距离，则从左端点到子树末端还有一条直径，剪掉右端；如果等于到左端点距离，剪一次即可。  Code123456789101112131415">
-<meta name="keywords" content="OI,树,树的直径">
+<meta name="description" content="&#x9898;&#x76EE;&#x5927;&#x610F;&#xFF1A;&#x7ED9;&#x5B9A;&#x4E00;&#x68F5;n&#x4E2A;&#x8282;&#x70B9;&#x5E26;&#x8FB9;&#x6743;&#x7684;&#x6811;&#xFF0C;&#x6C42;&#x6811;&#x7684;&#x76F4;&#x5F84;&#x957F;&#x548C;&#x76F4;&#x5F84;&#x5FC5;&#x7ECF;&#x8FB9;&#x7684;&#x4E2A;&#x6570;&#x3002;  &#x601D;&#x8DEF;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;2&#x6B21;dfs&#x6C42;&#x51FA;&#x4E00;&#x6761;&#x76F4;&#x5F84;&#x548C;&#x76F4;&#x5F84;&#x957F;&#x5EA6;&#xFF0C;&#x7B2C;&#x4E00;&#x95EE;&#x89E3;&#x51B3;&#x3002;&#x663E;&#x7136;&#x76F4;&#x5F84;&#x5FC5;&#x7ECF;&#x8FB9;&#x4E00;&#x5B9A;&#x662F;&#x4E00;&#x6BB5;&#x8FDE;&#x7EED;&#x8DEF;&#x5F84;&#x3002;&#x6211;&#x4EEC;&#x518D;&#x5199;&#x4E00;&#x4E2A;dfs&#x6C42;&#x76F4;&#x5F84;&#x4E0A;&#x7684;&#x70B9;&#x5411;&#x76F4;&#x5F84;&#x5916;&#x7684;&#x5B50;&#x6811;&#x6DF1;&#x5EA6;&#x3002;&#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#x904D;&#x5386;&#x76F4;&#x5F84;&#xFF0C;&#x5982;&#x679C;&#x5B50;&#x6811;&#x6DF1;&#x5EA6;&#x7B49;&#x4E8E;&#x5230;&#x53F3;&#x7AEF;&#x70B9;&#x8DDD;&#x79BB;&#xFF0C;&#x5219;&#x4ECE;&#x5DE6;&#x7AEF;&#x70B9;&#x5230;&#x5B50;&#x6811;&#x672B;&#x7AEF;&#x8FD8;&#x6709;&#x4E00;&#x6761;&#x76F4;&#x5F84;&#xFF0C;&#x526A;&#x6389;&#x53F3;&#x7AEF;&#xFF1B;&#x5982;&#x679C;&#x7B49;&#x4E8E;&#x5230;&#x5DE6;&#x7AEF;&#x70B9;&#x8DDD;&#x79BB;&#xFF0C;&#x526A;&#x4E00;&#x6B21;&#x5373;&#x53EF;&#x3002;  Code123456789101112131415">
+<meta name="keywords" content="OI,&#x6811;,&#x6811;&#x7684;&#x76F4;&#x5F84;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[lg3304][SDOI2013]直径">
-<meta property="og:url" content="http://gcc314.github.io/2018/02/11/lg3304-SDOI2013-直径/index.html">
+<meta property="og:title" content="[lg3304][SDOI2013]&#x76F4;&#x5F84;">
+<meta property="og:url" content="http://gcc314.github.io/2018/02/11/lg3304-SDOI2013-&#x76F4;&#x5F84;/index.html">
 <meta property="og:site_name" content="Euphoria">
-<meta property="og:description" content="题目大意：给定一棵n个节点带边权的树，求树的直径长和直径必经边的个数。  思路首先我们可以2次dfs求出一条直径和直径长度，第一问解决。显然直径必经边一定是一段连续路径。我们再写一个dfs求直径上的点向直径外的子树深度。从右往左遍历直径，如果子树深度等于到右端点距离，则从左端点到子树末端还有一条直径，剪掉右端；如果等于到左端点距离，剪一次即可。  Code123456789101112131415">
+<meta property="og:description" content="&#x9898;&#x76EE;&#x5927;&#x610F;&#xFF1A;&#x7ED9;&#x5B9A;&#x4E00;&#x68F5;n&#x4E2A;&#x8282;&#x70B9;&#x5E26;&#x8FB9;&#x6743;&#x7684;&#x6811;&#xFF0C;&#x6C42;&#x6811;&#x7684;&#x76F4;&#x5F84;&#x957F;&#x548C;&#x76F4;&#x5F84;&#x5FC5;&#x7ECF;&#x8FB9;&#x7684;&#x4E2A;&#x6570;&#x3002;  &#x601D;&#x8DEF;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;2&#x6B21;dfs&#x6C42;&#x51FA;&#x4E00;&#x6761;&#x76F4;&#x5F84;&#x548C;&#x76F4;&#x5F84;&#x957F;&#x5EA6;&#xFF0C;&#x7B2C;&#x4E00;&#x95EE;&#x89E3;&#x51B3;&#x3002;&#x663E;&#x7136;&#x76F4;&#x5F84;&#x5FC5;&#x7ECF;&#x8FB9;&#x4E00;&#x5B9A;&#x662F;&#x4E00;&#x6BB5;&#x8FDE;&#x7EED;&#x8DEF;&#x5F84;&#x3002;&#x6211;&#x4EEC;&#x518D;&#x5199;&#x4E00;&#x4E2A;dfs&#x6C42;&#x76F4;&#x5F84;&#x4E0A;&#x7684;&#x70B9;&#x5411;&#x76F4;&#x5F84;&#x5916;&#x7684;&#x5B50;&#x6811;&#x6DF1;&#x5EA6;&#x3002;&#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#x904D;&#x5386;&#x76F4;&#x5F84;&#xFF0C;&#x5982;&#x679C;&#x5B50;&#x6811;&#x6DF1;&#x5EA6;&#x7B49;&#x4E8E;&#x5230;&#x53F3;&#x7AEF;&#x70B9;&#x8DDD;&#x79BB;&#xFF0C;&#x5219;&#x4ECE;&#x5DE6;&#x7AEF;&#x70B9;&#x5230;&#x5B50;&#x6811;&#x672B;&#x7AEF;&#x8FD8;&#x6709;&#x4E00;&#x6761;&#x76F4;&#x5F84;&#xFF0C;&#x526A;&#x6389;&#x53F3;&#x7AEF;&#xFF1B;&#x5982;&#x679C;&#x7B49;&#x4E8E;&#x5230;&#x5DE6;&#x7AEF;&#x70B9;&#x8DDD;&#x79BB;&#xFF0C;&#x526A;&#x4E00;&#x6B21;&#x5373;&#x53EF;&#x3002;  Code123456789101112131415">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-02-11T05:14:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[lg3304][SDOI2013]直径">
-<meta name="twitter:description" content="题目大意：给定一棵n个节点带边权的树，求树的直径长和直径必经边的个数。  思路首先我们可以2次dfs求出一条直径和直径长度，第一问解决。显然直径必经边一定是一段连续路径。我们再写一个dfs求直径上的点向直径外的子树深度。从右往左遍历直径，如果子树深度等于到右端点距离，则从左端点到子树末端还有一条直径，剪掉右端；如果等于到左端点距离，剪一次即可。  Code123456789101112131415">
+<meta name="twitter:title" content="[lg3304][SDOI2013]&#x76F4;&#x5F84;">
+<meta name="twitter:description" content="&#x9898;&#x76EE;&#x5927;&#x610F;&#xFF1A;&#x7ED9;&#x5B9A;&#x4E00;&#x68F5;n&#x4E2A;&#x8282;&#x70B9;&#x5E26;&#x8FB9;&#x6743;&#x7684;&#x6811;&#xFF0C;&#x6C42;&#x6811;&#x7684;&#x76F4;&#x5F84;&#x957F;&#x548C;&#x76F4;&#x5F84;&#x5FC5;&#x7ECF;&#x8FB9;&#x7684;&#x4E2A;&#x6570;&#x3002;  &#x601D;&#x8DEF;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;2&#x6B21;dfs&#x6C42;&#x51FA;&#x4E00;&#x6761;&#x76F4;&#x5F84;&#x548C;&#x76F4;&#x5F84;&#x957F;&#x5EA6;&#xFF0C;&#x7B2C;&#x4E00;&#x95EE;&#x89E3;&#x51B3;&#x3002;&#x663E;&#x7136;&#x76F4;&#x5F84;&#x5FC5;&#x7ECF;&#x8FB9;&#x4E00;&#x5B9A;&#x662F;&#x4E00;&#x6BB5;&#x8FDE;&#x7EED;&#x8DEF;&#x5F84;&#x3002;&#x6211;&#x4EEC;&#x518D;&#x5199;&#x4E00;&#x4E2A;dfs&#x6C42;&#x76F4;&#x5F84;&#x4E0A;&#x7684;&#x70B9;&#x5411;&#x76F4;&#x5F84;&#x5916;&#x7684;&#x5B50;&#x6811;&#x6DF1;&#x5EA6;&#x3002;&#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#x904D;&#x5386;&#x76F4;&#x5F84;&#xFF0C;&#x5982;&#x679C;&#x5B50;&#x6811;&#x6DF1;&#x5EA6;&#x7B49;&#x4E8E;&#x5230;&#x53F3;&#x7AEF;&#x70B9;&#x8DDD;&#x79BB;&#xFF0C;&#x5219;&#x4ECE;&#x5DE6;&#x7AEF;&#x70B9;&#x5230;&#x5B50;&#x6811;&#x672B;&#x7AEF;&#x8FD8;&#x6709;&#x4E00;&#x6761;&#x76F4;&#x5F84;&#xFF0C;&#x526A;&#x6389;&#x53F3;&#x7AEF;&#xFF1B;&#x5982;&#x679C;&#x7B49;&#x4E8E;&#x5230;&#x5DE6;&#x7AEF;&#x70B9;&#x8DDD;&#x79BB;&#xFF0C;&#x526A;&#x4E00;&#x6B21;&#x5373;&#x53EF;&#x3002;  Code123456789101112131415">
 
 
 
@@ -156,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="http://gcc314.github.io/2018/02/11/lg3304-SDOI2013-直径/"/>
+  <link rel="canonical" href="http://gcc314.github.io/2018/02/11/lg3304-SDOI2013-&#x76F4;&#x5F84;/">
 
 
 
 
 
-  <title>[lg3304][SDOI2013]直径 | Euphoria</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>[lg3304][SDOI2013]&#x76F4;&#x5F84; | Euphoria</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -173,7 +165,7 @@
 
 
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -183,20 +175,20 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Euphoria</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">GCC314's blog</p>
+        <p class="site-subtitle">GCC314&apos;s blog</p>
       
   </div>
 
@@ -219,9 +211,9 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            &#x9996;&#x9875;
           </a>
         </li>
       
@@ -229,9 +221,9 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            归档
+            &#x5F52;&#x6863;
           </a>
         </li>
       
@@ -263,20 +255,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://gcc314.github.io/2018/02/11/lg3304-SDOI2013-直径/">
+    <link itemprop="mainEntityOfPage" href="http://gcc314.github.io/2018/02/11/lg3304-SDOI2013-&#x76F4;&#x5F84;/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GCC314">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Euphoria">
     </span>
 
@@ -285,7 +277,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[lg3304][SDOI2013]直径</h1>
+          <h1 class="post-title" itemprop="name headline">[lg3304][SDOI2013]&#x76F4;&#x5F84;</h1>
         
 
         <div class="post-meta">
@@ -295,9 +287,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">&#x53D1;&#x8868;&#x4E8E;</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-11T21:01:41+08:00">
+              <time title="&#x521B;&#x5EFA;&#x4E8E;" itemprop="dateCreated datePublished" datetime="2018-02-11T21:01:41+08:00">
                 2018-02-11
               </time>
             
@@ -335,11 +327,11 @@
       
 
       
-        <h2 id="题目大意："><a href="#题目大意：" class="headerlink" title="题目大意："></a><a href="https://www.luogu.org/problemnew/show/P3304" target="_blank" rel="noopener">题目</a>大意：</h2><p>给定一棵n个节点带边权的树，求树的直径长和直径必经边的个数。</p>
+        <h2 id="&#x9898;&#x76EE;&#x5927;&#x610F;&#xFF1A;"><a href="#&#x9898;&#x76EE;&#x5927;&#x610F;&#xFF1A;" class="headerlink" title="&#x9898;&#x76EE;&#x5927;&#x610F;&#xFF1A;"></a><a href="https://www.luogu.org/problemnew/show/P3304" target="_blank" rel="noopener">&#x9898;&#x76EE;</a>&#x5927;&#x610F;&#xFF1A;</h2><p>&#x7ED9;&#x5B9A;&#x4E00;&#x68F5;n&#x4E2A;&#x8282;&#x70B9;&#x5E26;&#x8FB9;&#x6743;&#x7684;&#x6811;&#xFF0C;&#x6C42;&#x6811;&#x7684;&#x76F4;&#x5F84;&#x957F;&#x548C;&#x76F4;&#x5F84;&#x5FC5;&#x7ECF;&#x8FB9;&#x7684;&#x4E2A;&#x6570;&#x3002;</p>
 <hr>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>首先我们可以2次dfs求出一条直径和直径长度，第一问解决。<br>显然直径必经边一定是一段连续路径。<br>我们再写一个dfs求直径上的点向直径外的子树深度。<br>从右往左遍历直径，<br>如果子树深度等于到右端点距离，则从左端点到子树末端还有一条直径，剪掉右端；<br>如果等于到左端点距离，剪一次即可。</p>
+<h2 id="&#x601D;&#x8DEF;"><a href="#&#x601D;&#x8DEF;" class="headerlink" title="&#x601D;&#x8DEF;"></a>&#x601D;&#x8DEF;</h2><p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;2&#x6B21;dfs&#x6C42;&#x51FA;&#x4E00;&#x6761;&#x76F4;&#x5F84;&#x548C;&#x76F4;&#x5F84;&#x957F;&#x5EA6;&#xFF0C;&#x7B2C;&#x4E00;&#x95EE;&#x89E3;&#x51B3;&#x3002;<br>&#x663E;&#x7136;&#x76F4;&#x5F84;&#x5FC5;&#x7ECF;&#x8FB9;&#x4E00;&#x5B9A;&#x662F;&#x4E00;&#x6BB5;&#x8FDE;&#x7EED;&#x8DEF;&#x5F84;&#x3002;<br>&#x6211;&#x4EEC;&#x518D;&#x5199;&#x4E00;&#x4E2A;dfs&#x6C42;&#x76F4;&#x5F84;&#x4E0A;&#x7684;&#x70B9;&#x5411;&#x76F4;&#x5F84;&#x5916;&#x7684;&#x5B50;&#x6811;&#x6DF1;&#x5EA6;&#x3002;<br>&#x4ECE;&#x53F3;&#x5F80;&#x5DE6;&#x904D;&#x5386;&#x76F4;&#x5F84;&#xFF0C;<br>&#x5982;&#x679C;&#x5B50;&#x6811;&#x6DF1;&#x5EA6;&#x7B49;&#x4E8E;&#x5230;&#x53F3;&#x7AEF;&#x70B9;&#x8DDD;&#x79BB;&#xFF0C;&#x5219;&#x4ECE;&#x5DE6;&#x7AEF;&#x70B9;&#x5230;&#x5B50;&#x6811;&#x672B;&#x7AEF;&#x8FD8;&#x6709;&#x4E00;&#x6761;&#x76F4;&#x5F84;&#xFF0C;&#x526A;&#x6389;&#x53F3;&#x7AEF;&#xFF1B;<br>&#x5982;&#x679C;&#x7B49;&#x4E8E;&#x5230;&#x5DE6;&#x7AEF;&#x70B9;&#x8DDD;&#x79BB;&#xFF0C;&#x526A;&#x4E00;&#x6B21;&#x5373;&#x53EF;&#x3002;</p>
 <hr>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200020</span></span><br><span class="line"><span class="keyword">int</span> fa[N],head[N],tot = <span class="number">0</span>,next[N &lt;&lt; <span class="number">1</span>],to[N &lt;&lt; <span class="number">1</span>],val[N &lt;&lt; <span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> n,p;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> dmt,dep[N];</span><br><span class="line"><span class="keyword">bool</span> ond[N],flag;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">getint</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">int</span> num = <span class="number">0</span>,sgn = <span class="number">1</span>;<span class="keyword">register</span> <span class="keyword">char</span> ch = getchar();<span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(ch);ch = getchar()) <span class="keyword">if</span>(ch == <span class="string">'-'</span>) sgn = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(ch);ch = getchar()) num = (num &lt;&lt; <span class="number">3</span>) + (num &lt;&lt; <span class="number">1</span>) + ch - <span class="string">'0'</span>;<span class="keyword">return</span> sgn ? num : -num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span></span>&#123;next[++tot] = head[u];to[tot] = v;val[tot] = w;head[u] = tot;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> f)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    fa[u] = f;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = head[u],v = to[i];~i;v = to[i = next[i]])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(v == f) <span class="keyword">continue</span>;</span><br><span class="line">        dep[v] = dep[u] + val[i];</span><br><span class="line">        <span class="keyword">if</span>(dep[v] &gt; dmt) p = v,dmt = dep[v];</span><br><span class="line">        dfs1(v,u);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> f)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = head[u],v = to[i];~i;v = to[i = next[i]])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(v == f || ond[v]) <span class="keyword">continue</span>;</span><br><span class="line">        dep[v] = dep[u] + val[i];</span><br><span class="line">        <span class="keyword">if</span>(dep[v] &gt; dmt) dmt = dep[v];</span><br><span class="line">        dfs2(v,u);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span>(head));</span><br><span class="line">    n = getint();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>,a,b,c;i &lt; n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        a = getint();b = getint();c = getint();</span><br><span class="line">        addedge(a,b,c);addedge(b,a,c);</span><br><span class="line">    &#125;</span><br><span class="line">    dfs1(<span class="number">1</span>,<span class="number">0</span>);<span class="keyword">int</span> l = p;dep[p] = dmt = <span class="number">0</span>;dfs1(l,<span class="number">0</span>);<span class="keyword">int</span> r = p; <span class="comment">//find the diameter</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,dmt);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = r;i;i = fa[i]) ond[i] = <span class="number">1</span>; <span class="comment">//mark the points on the diameter</span></span><br><span class="line">    <span class="keyword">int</span> ll = l,rr = r;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = fa[rr];i != ll;i = fa[i])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> ld = dep[i],rd = dep[rr] - dep[i];</span><br><span class="line">        dep[i] = dmt = <span class="number">0</span>;</span><br><span class="line">        dfs2(i,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(dmt == rd) r = i;</span><br><span class="line">        <span class="keyword">if</span>(dmt == ld &amp;&amp;!flag) flag = <span class="number">1</span>,l = i;</span><br><span class="line">    &#125;</span><br><span class="line">    dmt = <span class="number">1</span>;<span class="keyword">for</span>(<span class="keyword">int</span> i = fa[r];i != l;i = fa[i]) dmt++;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dmt);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200020</span></span><br><span class="line"><span class="keyword">int</span> fa[N],head[N],tot = <span class="number">0</span>,next[N &lt;&lt; <span class="number">1</span>],to[N &lt;&lt; <span class="number">1</span>],val[N &lt;&lt; <span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> n,p;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> dmt,dep[N];</span><br><span class="line"><span class="keyword">bool</span> ond[N],flag;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">getint</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">int</span> num = <span class="number">0</span>,sgn = <span class="number">1</span>;<span class="keyword">register</span> <span class="keyword">char</span> ch = getchar();<span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(ch);ch = getchar()) <span class="keyword">if</span>(ch == <span class="string">&apos;-&apos;</span>) sgn = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(ch);ch = getchar()) num = (num &lt;&lt; <span class="number">3</span>) + (num &lt;&lt; <span class="number">1</span>) + ch - <span class="string">&apos;0&apos;</span>;<span class="keyword">return</span> sgn ? num : -num;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span></span>{next[++tot] = head[u];to[tot] = v;val[tot] = w;head[u] = tot;}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> f)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    fa[u] = f;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = head[u],v = to[i];~i;v = to[i = next[i]])</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(v == f) <span class="keyword">continue</span>;</span><br><span class="line">        dep[v] = dep[u] + val[i];</span><br><span class="line">        <span class="keyword">if</span>(dep[v] &gt; dmt) p = v,dmt = dep[v];</span><br><span class="line">        dfs1(v,u);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> f)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = head[u],v = to[i];~i;v = to[i = next[i]])</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(v == f || ond[v]) <span class="keyword">continue</span>;</span><br><span class="line">        dep[v] = dep[u] + val[i];</span><br><span class="line">        <span class="keyword">if</span>(dep[v] &gt; dmt) dmt = dep[v];</span><br><span class="line">        dfs2(v,u);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span>(head));</span><br><span class="line">    n = getint();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>,a,b,c;i &lt; n;i++)</span><br><span class="line">    {</span><br><span class="line">        a = getint();b = getint();c = getint();</span><br><span class="line">        addedge(a,b,c);addedge(b,a,c);</span><br><span class="line">    }</span><br><span class="line">    dfs1(<span class="number">1</span>,<span class="number">0</span>);<span class="keyword">int</span> l = p;dep[p] = dmt = <span class="number">0</span>;dfs1(l,<span class="number">0</span>);<span class="keyword">int</span> r = p; <span class="comment">//find the diameter</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,dmt);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = r;i;i = fa[i]) ond[i] = <span class="number">1</span>; <span class="comment">//mark the points on the diameter</span></span><br><span class="line">    <span class="keyword">int</span> ll = l,rr = r;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = fa[rr];i != ll;i = fa[i])</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">int</span> ld = dep[i],rd = dep[rr] - dep[i];</span><br><span class="line">        dep[i] = dmt = <span class="number">0</span>;</span><br><span class="line">        dfs2(i,<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(dmt == rd) r = i;</span><br><span class="line">        <span class="keyword">if</span>(dmt == ld &amp;&amp;!flag) flag = <span class="number">1</span>,l = i;</span><br><span class="line">    }</span><br><span class="line">    dmt = <span class="number">1</span>;<span class="keyword">for</span>(<span class="keyword">int</span> i = fa[r];i != l;i = fa[i]) dmt++;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,dmt);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
       
     </div>
     
@@ -358,9 +350,9 @@
           
             <a href="/tags/OI/" rel="tag"># OI</a>
           
-            <a href="/tags/树/" rel="tag"># 树</a>
+            <a href="/tags/&#x6811;/" rel="tag"># &#x6811;</a>
           
-            <a href="/tags/树的直径/" rel="tag"># 树的直径</a>
+            <a href="/tags/&#x6811;&#x7684;&#x76F4;&#x5F84;/" rel="tag"># &#x6811;&#x7684;&#x76F4;&#x5F84;</a>
           
         </div>
       
@@ -373,8 +365,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/11/lg2491-SDOI2011-消防/" rel="next" title="[lg2491][SDOI2011]消防">
-                <i class="fa fa-chevron-left"></i> [lg2491][SDOI2011]消防
+              <a href="/2018/02/11/lg2491-SDOI2011-&#x6D88;&#x9632;/" rel="next" title="[lg2491][SDOI2011]&#x6D88;&#x9632;">
+                <i class="fa fa-chevron-left"></i> [lg2491][SDOI2011]&#x6D88;&#x9632;
               </a>
             
           </div>
@@ -439,17 +431,17 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            &#x6587;&#x7AE0;&#x76EE;&#x5F55;
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            &#x7AD9;&#x70B9;&#x6982;&#x89C8;
           </li>
         </ul>
       
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">GCC314</p>
               <p class="site-description motion-element" itemprop="description">A blog for programming especially OI.</p>
@@ -462,8 +454,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">&#x65E5;&#x5FD7;</span>
                 </a>
               </div>
             
@@ -475,8 +467,8 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">&#x6807;&#x7B7E;</span>
                 </a>
               </div>
             
@@ -546,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意："><span class="nav-number">1.</span> <span class="nav-text">题目大意：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x9898;&#x76EE;&#x5927;&#x610F;&#xFF1A;"><span class="nav-number">1.</span> <span class="nav-text">&#x9898;&#x76EE;&#x5927;&#x610F;&#xFF1A;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x601D;&#x8DEF;"><span class="nav-number">2.</span> <span class="nav-text">&#x601D;&#x8DEF;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
             
 
           </div>
@@ -566,7 +558,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&#xA9; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -576,7 +568,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">&#x7531; <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> &#x5F3A;&#x529B;&#x9A71;&#x52A8;</div>
 
 
 
@@ -584,7 +576,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">&#x4E3B;&#x9898; &#x2014; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -598,7 +590,7 @@
 
 
         
-        <div width=400 height=150 vertical-align=top><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=2094509432&auto=0&height=90"></iframe></div>
+        <div width="400" height="150" vertical-align="top"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="110" src="//music.163.com/outchain/player?type=0&amp;id=2094509432&amp;auto=0&amp;height=90"></iframe></div>
       </div>
     </footer>
 
@@ -766,8 +758,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax --><script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
 
@@ -783,7 +774,7 @@
 <script type="text/javascript" src="custom_mathjax_source">
 </script>
 <!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script>
   
 
 
@@ -791,5 +782,6 @@
 
   
 
-</body>
-</html>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body></html><!-- hexo-inject:end -->

@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
-<head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-Hans"><head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -24,8 +16,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -44,7 +36,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -76,7 +68,7 @@
   
     
     
-    <link href="fonts.googleapis.com/css?family=Comfortaa:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="fonts.googleapis.com/css?family=Comfortaa:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -84,9 +76,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -104,7 +96,7 @@
 
 
 
-  <meta name="keywords" content="OI,数学,博弈论,FWT," />
+  <meta name="keywords" content="OI,&#x6570;&#x5B66;,&#x535A;&#x5F08;&#x8BBA;,FWT,">
 
 
 
@@ -115,18 +107,18 @@
 
 
 
-<meta name="description" content="题目大意两人轮流拿n堆石子,每次拿一堆中的若干个.每堆石子的数目为小于m的质数.求使后取者胜的方案数模$10^9+7$的值.  思路根据博弈论,可得到等价问题:有n个不大于m的质数,求异或和为0的方案数. 用FWT,异或后卷积最高次项前系数即方案数.  Code123456789101112131415161718192021222324252627282930313233343536373839">
-<meta name="keywords" content="OI,数学,博弈论,FWT">
+<meta name="description" content="&#x9898;&#x76EE;&#x5927;&#x610F;&#x4E24;&#x4EBA;&#x8F6E;&#x6D41;&#x62FF;n&#x5806;&#x77F3;&#x5B50;,&#x6BCF;&#x6B21;&#x62FF;&#x4E00;&#x5806;&#x4E2D;&#x7684;&#x82E5;&#x5E72;&#x4E2A;.&#x6BCF;&#x5806;&#x77F3;&#x5B50;&#x7684;&#x6570;&#x76EE;&#x4E3A;&#x5C0F;&#x4E8E;m&#x7684;&#x8D28;&#x6570;.&#x6C42;&#x4F7F;&#x540E;&#x53D6;&#x8005;&#x80DC;&#x7684;&#x65B9;&#x6848;&#x6570;&#x6A21;$10^9+7$&#x7684;&#x503C;.  &#x601D;&#x8DEF;&#x6839;&#x636E;&#x535A;&#x5F08;&#x8BBA;,&#x53EF;&#x5F97;&#x5230;&#x7B49;&#x4EF7;&#x95EE;&#x9898;:&#x6709;n&#x4E2A;&#x4E0D;&#x5927;&#x4E8E;m&#x7684;&#x8D28;&#x6570;,&#x6C42;&#x5F02;&#x6216;&#x548C;&#x4E3A;0&#x7684;&#x65B9;&#x6848;&#x6570;. &#x7528;FWT,&#x5F02;&#x6216;&#x540E;&#x5377;&#x79EF;&#x6700;&#x9AD8;&#x6B21;&#x9879;&#x524D;&#x7CFB;&#x6570;&#x5373;&#x65B9;&#x6848;&#x6570;.  Code123456789101112131415161718192021222324252627282930313233343536373839">
+<meta name="keywords" content="OI,&#x6570;&#x5B66;,&#x535A;&#x5F08;&#x8BBA;,FWT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[BZOJ 4589]Hard Nim">
 <meta property="og:url" content="http://gcc314.github.io/2018/03/01/BZOJ-4589-Hard-Nim/index.html">
 <meta property="og:site_name" content="Euphoria">
-<meta property="og:description" content="题目大意两人轮流拿n堆石子,每次拿一堆中的若干个.每堆石子的数目为小于m的质数.求使后取者胜的方案数模$10^9+7$的值.  思路根据博弈论,可得到等价问题:有n个不大于m的质数,求异或和为0的方案数. 用FWT,异或后卷积最高次项前系数即方案数.  Code123456789101112131415161718192021222324252627282930313233343536373839">
+<meta property="og:description" content="&#x9898;&#x76EE;&#x5927;&#x610F;&#x4E24;&#x4EBA;&#x8F6E;&#x6D41;&#x62FF;n&#x5806;&#x77F3;&#x5B50;,&#x6BCF;&#x6B21;&#x62FF;&#x4E00;&#x5806;&#x4E2D;&#x7684;&#x82E5;&#x5E72;&#x4E2A;.&#x6BCF;&#x5806;&#x77F3;&#x5B50;&#x7684;&#x6570;&#x76EE;&#x4E3A;&#x5C0F;&#x4E8E;m&#x7684;&#x8D28;&#x6570;.&#x6C42;&#x4F7F;&#x540E;&#x53D6;&#x8005;&#x80DC;&#x7684;&#x65B9;&#x6848;&#x6570;&#x6A21;$10^9+7$&#x7684;&#x503C;.  &#x601D;&#x8DEF;&#x6839;&#x636E;&#x535A;&#x5F08;&#x8BBA;,&#x53EF;&#x5F97;&#x5230;&#x7B49;&#x4EF7;&#x95EE;&#x9898;:&#x6709;n&#x4E2A;&#x4E0D;&#x5927;&#x4E8E;m&#x7684;&#x8D28;&#x6570;,&#x6C42;&#x5F02;&#x6216;&#x548C;&#x4E3A;0&#x7684;&#x65B9;&#x6848;&#x6570;. &#x7528;FWT,&#x5F02;&#x6216;&#x540E;&#x5377;&#x79EF;&#x6700;&#x9AD8;&#x6B21;&#x9879;&#x524D;&#x7CFB;&#x6570;&#x5373;&#x65B9;&#x6848;&#x6570;.  Code123456789101112131415161718192021222324252627282930313233343536373839">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-03-01T06:43:18.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[BZOJ 4589]Hard Nim">
-<meta name="twitter:description" content="题目大意两人轮流拿n堆石子,每次拿一堆中的若干个.每堆石子的数目为小于m的质数.求使后取者胜的方案数模$10^9+7$的值.  思路根据博弈论,可得到等价问题:有n个不大于m的质数,求异或和为0的方案数. 用FWT,异或后卷积最高次项前系数即方案数.  Code123456789101112131415161718192021222324252627282930313233343536373839">
+<meta name="twitter:description" content="&#x9898;&#x76EE;&#x5927;&#x610F;&#x4E24;&#x4EBA;&#x8F6E;&#x6D41;&#x62FF;n&#x5806;&#x77F3;&#x5B50;,&#x6BCF;&#x6B21;&#x62FF;&#x4E00;&#x5806;&#x4E2D;&#x7684;&#x82E5;&#x5E72;&#x4E2A;.&#x6BCF;&#x5806;&#x77F3;&#x5B50;&#x7684;&#x6570;&#x76EE;&#x4E3A;&#x5C0F;&#x4E8E;m&#x7684;&#x8D28;&#x6570;.&#x6C42;&#x4F7F;&#x540E;&#x53D6;&#x8005;&#x80DC;&#x7684;&#x65B9;&#x6848;&#x6570;&#x6A21;$10^9+7$&#x7684;&#x503C;.  &#x601D;&#x8DEF;&#x6839;&#x636E;&#x535A;&#x5F08;&#x8BBA;,&#x53EF;&#x5F97;&#x5230;&#x7B49;&#x4EF7;&#x95EE;&#x9898;:&#x6709;n&#x4E2A;&#x4E0D;&#x5927;&#x4E8E;m&#x7684;&#x8D28;&#x6570;,&#x6C42;&#x5F02;&#x6216;&#x548C;&#x4E3A;0&#x7684;&#x65B9;&#x6848;&#x6570;. &#x7528;FWT,&#x5F02;&#x6216;&#x540E;&#x5377;&#x79EF;&#x6700;&#x9AD8;&#x6B21;&#x9879;&#x524D;&#x7CFB;&#x6570;&#x5373;&#x65B9;&#x6848;&#x6570;.  Code123456789101112131415161718192021222324252627282930313233343536373839">
 
 
 
@@ -156,7 +148,7 @@
 
 
 
-  <link rel="canonical" href="http://gcc314.github.io/2018/03/01/BZOJ-4589-Hard-Nim/"/>
+  <link rel="canonical" href="http://gcc314.github.io/2018/03/01/BZOJ-4589-Hard-Nim/">
 
 
 
@@ -173,7 +165,7 @@
 
 
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -183,20 +175,20 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Euphoria</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">GCC314's blog</p>
+        <p class="site-subtitle">GCC314&apos;s blog</p>
       
   </div>
 
@@ -219,9 +211,9 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            &#x9996;&#x9875;
           </a>
         </li>
       
@@ -229,9 +221,9 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            归档
+            &#x5F52;&#x6863;
           </a>
         </li>
       
@@ -263,20 +255,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://gcc314.github.io/2018/03/01/BZOJ-4589-Hard-Nim/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GCC314">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Euphoria">
     </span>
 
@@ -295,9 +287,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">&#x53D1;&#x8868;&#x4E8E;</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T18:21:22+08:00">
+              <time title="&#x521B;&#x5EFA;&#x4E8E;" itemprop="dateCreated datePublished" datetime="2018-03-01T18:21:22+08:00">
                 2018-03-01
               </time>
             
@@ -335,12 +327,12 @@
       
 
       
-        <h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=4589" target="_blank" rel="noopener">题目</a>大意</h2><p>两人轮流拿n堆石子,每次拿一堆中的若干个.每堆石子的数目为小于m的质数.求使后取者胜的方案数模$10^9+7$的值.</p>
+        <h2 id="&#x9898;&#x76EE;&#x5927;&#x610F;"><a href="#&#x9898;&#x76EE;&#x5927;&#x610F;" class="headerlink" title="&#x9898;&#x76EE;&#x5927;&#x610F;"></a><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=4589" target="_blank" rel="noopener">&#x9898;&#x76EE;</a>&#x5927;&#x610F;</h2><p>&#x4E24;&#x4EBA;&#x8F6E;&#x6D41;&#x62FF;n&#x5806;&#x77F3;&#x5B50;,&#x6BCF;&#x6B21;&#x62FF;&#x4E00;&#x5806;&#x4E2D;&#x7684;&#x82E5;&#x5E72;&#x4E2A;.&#x6BCF;&#x5806;&#x77F3;&#x5B50;&#x7684;&#x6570;&#x76EE;&#x4E3A;&#x5C0F;&#x4E8E;m&#x7684;&#x8D28;&#x6570;.&#x6C42;&#x4F7F;&#x540E;&#x53D6;&#x8005;&#x80DC;&#x7684;&#x65B9;&#x6848;&#x6570;&#x6A21;$10^9+7$&#x7684;&#x503C;.</p>
 <hr>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>根据博弈论,可得到等价问题:有n个不大于m的质数,求异或和为0的方案数.</p>
-<p>用FWT,异或后卷积最高次项前系数即方案数.</p>
+<h2 id="&#x601D;&#x8DEF;"><a href="#&#x601D;&#x8DEF;" class="headerlink" title="&#x601D;&#x8DEF;"></a>&#x601D;&#x8DEF;</h2><p>&#x6839;&#x636E;&#x535A;&#x5F08;&#x8BBA;,&#x53EF;&#x5F97;&#x5230;&#x7B49;&#x4EF7;&#x95EE;&#x9898;:&#x6709;n&#x4E2A;&#x4E0D;&#x5927;&#x4E8E;m&#x7684;&#x8D28;&#x6570;,&#x6C42;&#x5F02;&#x6216;&#x548C;&#x4E3A;0&#x7684;&#x65B9;&#x6848;&#x6570;.</p>
+<p>&#x7528;FWT,&#x5F02;&#x6216;&#x540E;&#x5377;&#x79EF;&#x6700;&#x9AD8;&#x6B21;&#x9879;&#x524D;&#x7CFB;&#x6570;&#x5373;&#x65B9;&#x6848;&#x6570;.</p>
 <hr>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 1000000007</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INV = <span class="number">5e8</span>+<span class="number">4</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200000</span></span><br><span class="line"><span class="keyword">int</span> n,m,cnt,vis[N],prime[N / <span class="number">5</span>],a[N &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">seive</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    vis[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt; N;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis[i]) prime[++cnt] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>,k = prime[j];j &lt;= cnt &amp;&amp; i * (k = prime[j]) &lt; N;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            vis[i * k] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(!(i % k)) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">qpow</span><span class="params">(LL a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LL ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) ans = <span class="number">1L</span>L * ans * a % MOD;</span><br><span class="line">        a = <span class="number">1L</span>L * a * a % MOD;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">fwt</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i &lt;&lt;= <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; n;j += (i &lt;&lt; <span class="number">1</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>;k &lt; i;k++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> x = a[j + k],y = a[j + k + i];</span><br><span class="line">                a[j + k] = (x + y) % MOD;a[j + k + i] = (x - y + MOD) % MOD;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">ufwt</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i &lt;&lt;= <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; n;j += (i &lt;&lt; <span class="number">1</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>;k &lt; i;k++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> x = a[j + k],y = a[j + k + i];</span><br><span class="line">                a[j + k] = <span class="number">1L</span>L * (x + y) * INV % MOD;a[j + k + i] = <span class="number">1L</span>L * (x - y + MOD) * INV % MOD;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    seive();</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%lld %lld"</span>,&amp;n,&amp;m))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> nn = <span class="number">1</span>;<span class="keyword">while</span>(m &gt;= nn)nn &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nn;i++) a[i] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= cnt &amp;&amp; prime[i] &lt;= m;i++) a[prime[i]] = <span class="number">1</span>;</span><br><span class="line">        fwt(a,nn);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nn;i++) a[i] = qpow(a[i],n);</span><br><span class="line">        ufwt(a,nn);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,a[<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 1000000007</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INV = <span class="number">5e8</span>+<span class="number">4</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200000</span></span><br><span class="line"><span class="keyword">int</span> n,m,cnt,vis[N],prime[N / <span class="number">5</span>],a[N &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">seive</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    vis[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt; N;i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(!vis[i]) prime[++cnt] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>,k = prime[j];j &lt;= cnt &amp;&amp; i * (k = prime[j]) &lt; N;j++)</span><br><span class="line">        {</span><br><span class="line">            vis[i * k] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(!(i % k)) <span class="keyword">break</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">qpow</span><span class="params">(LL a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    LL ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) ans = <span class="number">1L</span>L * ans * a % MOD;</span><br><span class="line">        a = <span class="number">1L</span>L * a * a % MOD;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">fwt</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i &lt;&lt;= <span class="number">1</span>)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; n;j += (i &lt;&lt; <span class="number">1</span>))</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>;k &lt; i;k++)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">int</span> x = a[j + k],y = a[j + k + i];</span><br><span class="line">                a[j + k] = (x + y) % MOD;a[j + k + i] = (x - y + MOD) % MOD;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">ufwt</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i &lt;&lt;= <span class="number">1</span>)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; n;j += (i &lt;&lt; <span class="number">1</span>))</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>;k &lt; i;k++)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">int</span> x = a[j + k],y = a[j + k + i];</span><br><span class="line">                a[j + k] = <span class="number">1L</span>L * (x + y) * INV % MOD;a[j + k + i] = <span class="number">1L</span>L * (x - y + MOD) * INV % MOD;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    seive();</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">&quot;%lld %lld&quot;</span>,&amp;n,&amp;m))</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">int</span> nn = <span class="number">1</span>;<span class="keyword">while</span>(m &gt;= nn)nn &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nn;i++) a[i] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= cnt &amp;&amp; prime[i] &lt;= m;i++) a[prime[i]] = <span class="number">1</span>;</span><br><span class="line">        fwt(a,nn);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; nn;i++) a[i] = qpow(a[i],n);</span><br><span class="line">        ufwt(a,nn);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,a[<span class="number">0</span>]);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
       
     </div>
@@ -360,9 +352,9 @@
           
             <a href="/tags/OI/" rel="tag"># OI</a>
           
-            <a href="/tags/数学/" rel="tag"># 数学</a>
+            <a href="/tags/&#x6570;&#x5B66;/" rel="tag"># &#x6570;&#x5B66;</a>
           
-            <a href="/tags/博弈论/" rel="tag"># 博弈论</a>
+            <a href="/tags/&#x535A;&#x5F08;&#x8BBA;/" rel="tag"># &#x535A;&#x5F08;&#x8BBA;</a>
           
             <a href="/tags/FWT/" rel="tag"># FWT</a>
           
@@ -377,8 +369,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/01/LOJ-2000-SDOI-2017-数字表格/" rel="next" title="[LOJ 2000][SDOI 2017]数字表格">
-                <i class="fa fa-chevron-left"></i> [LOJ 2000][SDOI 2017]数字表格
+              <a href="/2018/03/01/LOJ-2000-SDOI-2017-&#x6570;&#x5B57;&#x8868;&#x683C;/" rel="next" title="[LOJ 2000][SDOI 2017]&#x6570;&#x5B57;&#x8868;&#x683C;">
+                <i class="fa fa-chevron-left"></i> [LOJ 2000][SDOI 2017]&#x6570;&#x5B57;&#x8868;&#x683C;
               </a>
             
           </div>
@@ -387,8 +379,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/06/BZOJ-3157-BZOJ-3516-国王奇遇记/" rel="prev" title="[BZOJ 3157][BZOJ 3516] 国王奇遇记">
-                [BZOJ 3157][BZOJ 3516] 国王奇遇记 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/06/BZOJ-3157-BZOJ-3516-&#x56FD;&#x738B;&#x5947;&#x9047;&#x8BB0;/" rel="prev" title="[BZOJ 3157][BZOJ 3516] &#x56FD;&#x738B;&#x5947;&#x9047;&#x8BB0;">
+                [BZOJ 3157][BZOJ 3516] &#x56FD;&#x738B;&#x5947;&#x9047;&#x8BB0; <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -443,17 +435,17 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            &#x6587;&#x7AE0;&#x76EE;&#x5F55;
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            &#x7AD9;&#x70B9;&#x6982;&#x89C8;
           </li>
         </ul>
       
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">GCC314</p>
               <p class="site-description motion-element" itemprop="description">A blog for programming especially OI.</p>
@@ -466,8 +458,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">&#x65E5;&#x5FD7;</span>
                 </a>
               </div>
             
@@ -479,8 +471,8 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">&#x6807;&#x7B7E;</span>
                 </a>
               </div>
             
@@ -550,7 +542,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意"><span class="nav-number">1.</span> <span class="nav-text">题目大意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x9898;&#x76EE;&#x5927;&#x610F;"><span class="nav-number">1.</span> <span class="nav-text">&#x9898;&#x76EE;&#x5927;&#x610F;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#&#x601D;&#x8DEF;"><span class="nav-number">2.</span> <span class="nav-text">&#x601D;&#x8DEF;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
             
 
           </div>
@@ -570,7 +562,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&#xA9; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -580,7 +572,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">&#x7531; <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> &#x5F3A;&#x529B;&#x9A71;&#x52A8;</div>
 
 
 
@@ -588,7 +580,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">&#x4E3B;&#x9898; &#x2014; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
@@ -602,7 +594,7 @@
 
 
         
-        <div width=400 height=150 vertical-align=top><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="//music.163.com/outchain/player?type=0&id=2094509432&auto=0&height=90"></iframe></div>
+        <div width="400" height="150" vertical-align="top"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="110" src="//music.163.com/outchain/player?type=0&amp;id=2094509432&amp;auto=0&amp;height=90"></iframe></div>
       </div>
     </footer>
 
@@ -770,8 +762,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax --><script type="text/x-mathjax-config">
   MathJax.Hub.Config("");
 </script>
 
@@ -787,7 +778,7 @@
 <script type="text/javascript" src="custom_mathjax_source">
 </script>
 <!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script>
   
 
 
@@ -795,5 +786,6 @@
 
   
 
-</body>
-</html>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body></html><!-- hexo-inject:end -->
