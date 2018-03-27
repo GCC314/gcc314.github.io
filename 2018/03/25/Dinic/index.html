@@ -1,5 +1,5 @@
 <!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-Hans"><head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
@@ -96,7 +96,7 @@
 
 
 
-  <meta name="keywords" content="OI,&#x677F;&#x5B50;,&#x7F51;&#x7EDC;&#x6D41;,">
+  <meta name="keywords" content="OI,&#x7F51;&#x7EDC;&#x6D41;,&#x677F;&#x5B50;,">
 
 
 
@@ -107,18 +107,18 @@
 
 
 
-<meta name="description" content="&#x5148;mark&#x4E00;&#x4E0B;&#x3002; &#x677F;&#x5B50;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x56FE;&#xFF0C;&#x4EE5;&#x53CA;&#x5176;&#x6E90;&#x70B9;&#x548C;&#x6C47;&#x70B9;&#xFF0C;&#x6C42;&#x51FA;&#x5176;&#x7F51;&#x7EDC;&#x6700;&#x5927;&#x6D41;&#x3002; &#x559C;&#x95FB;&#x4E50;&#x89C1;&#x7684;D&#x59AE;&#x53EF;Dinic&#x677F;&#x5B50;&#x3002; Code1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162#include &amp;lt;cstdio&amp;gt;#in">
-<meta name="keywords" content="OI,&#x677F;&#x5B50;,&#x7F51;&#x7EDC;&#x6D41;">
+<meta name="description" content="&amp;#x5148;mark&amp;#x4E00;&amp;#x4E0B;&amp;#x3002; &amp;#x677F;&amp;#x5B50;&amp;#x7ED9;&amp;#x51FA;&amp;#x4E00;&amp;#x4E2A;&amp;#x7F51;&amp;#x7EDC;&amp;#x56FE;&amp;#xFF0C;&amp;#x4EE5;&amp;#x53CA;&amp;#x5176;&amp;#x6E90;&amp;#x70B9;&amp;#x548C;&amp;#x6C47;&amp;#x70B9;&amp;#xFF0C;&amp;#x6C42;&amp;#x">
+<meta name="keywords" content="OI,&#x7F51;&#x7EDC;&#x6D41;,&#x677F;&#x5B50;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dinic">
 <meta property="og:url" content="http://gcc314.github.io/2018/03/25/Dinic/index.html">
 <meta property="og:site_name" content="Euphoria">
-<meta property="og:description" content="&#x5148;mark&#x4E00;&#x4E0B;&#x3002; &#x677F;&#x5B50;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x56FE;&#xFF0C;&#x4EE5;&#x53CA;&#x5176;&#x6E90;&#x70B9;&#x548C;&#x6C47;&#x70B9;&#xFF0C;&#x6C42;&#x51FA;&#x5176;&#x7F51;&#x7EDC;&#x6700;&#x5927;&#x6D41;&#x3002; &#x559C;&#x95FB;&#x4E50;&#x89C1;&#x7684;D&#x59AE;&#x53EF;Dinic&#x677F;&#x5B50;&#x3002; Code1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162#include &amp;lt;cstdio&amp;gt;#in">
+<meta property="og:description" content="&amp;#x5148;mark&amp;#x4E00;&amp;#x4E0B;&amp;#x3002; &amp;#x677F;&amp;#x5B50;&amp;#x7ED9;&amp;#x51FA;&amp;#x4E00;&amp;#x4E2A;&amp;#x7F51;&amp;#x7EDC;&amp;#x56FE;&amp;#xFF0C;&amp;#x4EE5;&amp;#x53CA;&amp;#x5176;&amp;#x6E90;&amp;#x70B9;&amp;#x548C;&amp;#x6C47;&amp;#x70B9;&amp;#xFF0C;&amp;#x6C42;&amp;#x">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-25T05:10:11.328Z">
+<meta property="og:updated_time" content="2018-03-25T05:10:11.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dinic">
-<meta name="twitter:description" content="&#x5148;mark&#x4E00;&#x4E0B;&#x3002; &#x677F;&#x5B50;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x56FE;&#xFF0C;&#x4EE5;&#x53CA;&#x5176;&#x6E90;&#x70B9;&#x548C;&#x6C47;&#x70B9;&#xFF0C;&#x6C42;&#x51FA;&#x5176;&#x7F51;&#x7EDC;&#x6700;&#x5927;&#x6D41;&#x3002; &#x559C;&#x95FB;&#x4E50;&#x89C1;&#x7684;D&#x59AE;&#x53EF;Dinic&#x677F;&#x5B50;&#x3002; Code1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162#include &amp;lt;cstdio&amp;gt;#in">
+<meta name="twitter:description" content="&amp;#x5148;mark&amp;#x4E00;&amp;#x4E0B;&amp;#x3002; &amp;#x677F;&amp;#x5B50;&amp;#x7ED9;&amp;#x51FA;&amp;#x4E00;&amp;#x4E2A;&amp;#x7F51;&amp;#x7EDC;&amp;#x56FE;&amp;#xFF0C;&amp;#x4EE5;&amp;#x53CA;&amp;#x5176;&amp;#x6E90;&amp;#x70B9;&amp;#x548C;&amp;#x6C47;&amp;#x70B9;&amp;#xFF0C;&amp;#x6C42;&amp;#x">
 
 
 
@@ -154,7 +154,7 @@
 
 
 
-  <title>Dinic | Euphoria</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Dinic | Euphoria</title>
   
 
 
@@ -172,7 +172,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -331,7 +331,7 @@
 <h2 id="&#x677F;&#x5B50;"><a href="#&#x677F;&#x5B50;" class="headerlink" title="&#x677F;&#x5B50;"></a><a href="https://www.luogu.org/problemnew/show/P3376" target="_blank" rel="noopener">&#x677F;&#x5B50;</a></h2><p>&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x7F51;&#x7EDC;&#x56FE;&#xFF0C;&#x4EE5;&#x53CA;&#x5176;&#x6E90;&#x70B9;&#x548C;&#x6C47;&#x70B9;&#xFF0C;&#x6C42;&#x51FA;&#x5176;&#x7F51;&#x7EDC;&#x6700;&#x5927;&#x6D41;&#x3002;</p>
 <p>&#x559C;&#x95FB;&#x4E50;&#x89C1;&#x7684;<del>D&#x59AE;&#x53EF;</del>Dinic&#x677F;&#x5B50;&#x3002;</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> e(a) memset(a,-1,sizeof(a))</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">10010</span>,M = <span class="number">100010</span>,inf = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">getint</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">int</span> num = <span class="number">0</span>,sgn = <span class="number">1</span>;<span class="keyword">register</span> <span class="keyword">char</span> ch = getchar();<span class="keyword">for</span>(;!<span class="built_in">isdigit</span>(ch);ch = getchar()) <span class="keyword">if</span>(ch == <span class="string">&apos;-&apos;</span>) sgn = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(;<span class="built_in">isdigit</span>(ch);ch = getchar()) num = (((num &lt;&lt; <span class="number">2</span>) + num) &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="string">&apos;0&apos;</span>);<span class="keyword">return</span> sgn ? num : -num;</span><br><span class="line">}</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Dinic</span></span></span><br><span class="line"><span class="class">{</span></span><br><span class="line">    <span class="keyword">int</span> head[N],next[M &lt;&lt; <span class="number">1</span>],to[M &lt;&lt; <span class="number">1</span>],cap[M &lt;&lt; <span class="number">1</span>],flow[M &lt;&lt; <span class="number">1</span>],tot,d[N],cur[N];<span class="keyword">int</span> s,t;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q;</span><br><span class="line">    Dinic(){init();}</span><br><span class="line">    Dinic(<span class="keyword">int</span> s,<span class="keyword">int</span> t){init();<span class="keyword">this</span>-&gt;s = s;<span class="keyword">this</span>-&gt;t = t;}</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>{e(head);tot = <span class="number">-1</span>;}</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span></span>{next[++tot] = head[u];to[tot] = v;cap[tot] = w;head[u] = tot;}</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">adde</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v,<span class="keyword">int</span> w)</span></span>{addedge(u,v,w);addedge(v,u,<span class="number">0</span>);}</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">bfs</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        e(d);d[s] = <span class="number">0</span>;Q.push(s);</span><br><span class="line">        <span class="keyword">while</span>(!Q.empty())</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">int</span> u = Q.front();Q.pop();</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = head[u],v = to[i];~i;v = to[i = next[i]]) <span class="keyword">if</span>(cap[i] &gt; flow[i]) <span class="keyword">if</span>(!~d[v]){d[v] = d[u] + <span class="number">1</span>;Q.push(v);}</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> (~d[t]) ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> mf)</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">if</span>(u == t) <span class="keyword">return</span> mf;</span><br><span class="line">        <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = (~cur[u]) ? cur[u] : head[u],v = to[i];i &gt;= <span class="number">0</span>;v = to[i = next[i]])</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">if</span>(cap[i] &gt; flow[i])</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">if</span>(d[v] != d[u] + <span class="number">1</span>) <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">int</span> a = dfs(v,<span class="built_in">std</span>::min(cap[i] - flow[i],mf - ret));</span><br><span class="line">                ret += a;flow[i] += a;flow[i ^ <span class="number">1</span>] -= a;</span><br><span class="line">                cur[u] = i;</span><br><span class="line">                <span class="keyword">if</span>(ret == mf) <span class="keyword">return</span> ret;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        cur[u] = <span class="number">-2</span>;<span class="keyword">return</span> ret;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">dinic</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(bfs()){e(cur);res += dfs(s,inf);}</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">};</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> n = getint(),m = getint(),s = getint(),t = getint();<span class="function">Dinic <span class="title">D</span><span class="params">(s,t)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>,u,v,w;i &lt;= m;i++) {u = getint();v = getint();w = getint();D.adde(u,v,w);}</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,D.dinic());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacityDefault":1,"opacityOnHover":0.7}});</script>
       
     </div>
     
@@ -350,9 +350,9 @@
           
             <a href="/tags/OI/" rel="tag"># OI</a>
           
-            <a href="/tags/&#x677F;&#x5B50;/" rel="tag"># &#x677F;&#x5B50;</a>
-          
             <a href="/tags/&#x7F51;&#x7EDC;&#x6D41;/" rel="tag"># &#x7F51;&#x7EDC;&#x6D41;</a>
+          
+            <a href="/tags/&#x677F;&#x5B50;/" rel="tag"># &#x677F;&#x5B50;</a>
           
         </div>
       
@@ -754,23 +754,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax --><script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="custom_mathjax_source">
-</script>
-<!-- End: Injected MathJax -->
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
@@ -780,4 +764,4 @@
 
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body></html><!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacityDefault":1,"opacityOnHover":0.7}});</script></body></html>

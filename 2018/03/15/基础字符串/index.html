@@ -1,5 +1,5 @@
 <!DOCTYPE html><html class="theme-next muse use-motion" lang="zh-Hans"><head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
@@ -96,7 +96,7 @@
 
 
 
-  <meta name="keywords" content="OI,&#x5B57;&#x7B26;&#x4E32;,&#x677F;&#x5B50;,">
+  <meta name="keywords" content="OI,&#x677F;&#x5B50;,&#x5B57;&#x7B26;&#x4E32;,">
 
 
 
@@ -107,19 +107,19 @@
 
 
 
-<meta name="description" content="KMPKMP(Knuth - Morris - Pratt)&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x80FD;&#x5728;$\Theta(n + m)$&#x65F6;&#x95F4;&#x5185;&#x8FDB;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x7684;&#x7B97;&#x6CD5;&#x3002; &#x5176;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x662F;&#x6784;&#x9020;&#x4E00;&#x4E2A;Next[]&#x6570;&#x7EC4;&#xFF0C;&#x8868;&#x793A;&#x5728;i&#x4F4D;&#x7F6E;&#x5339;&#x914D;&#x4E32;&#x5931;&#x914D;&#x65F6;&#x8DF3;&#x8F6C;&#x5230;Next[i]&#x3002; &#x4E3E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;  &#x6709;&#x5B57;&#x7B26;&#x4E32;A : a a a a b a b a b b a &#x5B57;&#x7B26;&#x4E32;B : a b a b b &#x7EA6;&#x5B9A;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5E8F;&#x53F7;&#x4E3A;1&#x3002; &#x7136;&#x540E;&#x663E;&#x7136;A&#x5728;1 2 3&#x5904;&#x4E0D;&#x5339;&#x914D;&#x3002;     In">
-<meta name="keywords" content="OI,&#x5B57;&#x7B26;&#x4E32;,&#x677F;&#x5B50;">
+<meta name="description" content="KMPKMP(Knuth - Morris - Pratt)&amp;#x7B97;&amp;#x6CD5;&amp;#x662F;&amp;#x4E00;&amp;#x79CD;&amp;#x80FD;&amp;#x5728;$\Theta(n + m)$&amp;#x65F6;&amp;#x95F4;&amp;#x5185;&amp;#x8FDB;&amp;#x884C;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x5339;&amp;#x914D;&amp;#x7684;&amp;#x7B97;&amp;#x">
+<meta name="keywords" content="OI,&#x677F;&#x5B50;,&#x5B57;&#x7B26;&#x4E32;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&#x57FA;&#x7840;&#x5B57;&#x7B26;&#x4E32;">
 <meta property="og:url" content="http://gcc314.github.io/2018/03/15/&#x57FA;&#x7840;&#x5B57;&#x7B26;&#x4E32;/index.html">
 <meta property="og:site_name" content="Euphoria">
-<meta property="og:description" content="KMPKMP(Knuth - Morris - Pratt)&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x80FD;&#x5728;$\Theta(n + m)$&#x65F6;&#x95F4;&#x5185;&#x8FDB;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x7684;&#x7B97;&#x6CD5;&#x3002; &#x5176;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x662F;&#x6784;&#x9020;&#x4E00;&#x4E2A;Next[]&#x6570;&#x7EC4;&#xFF0C;&#x8868;&#x793A;&#x5728;i&#x4F4D;&#x7F6E;&#x5339;&#x914D;&#x4E32;&#x5931;&#x914D;&#x65F6;&#x8DF3;&#x8F6C;&#x5230;Next[i]&#x3002; &#x4E3E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;  &#x6709;&#x5B57;&#x7B26;&#x4E32;A : a a a a b a b a b b a &#x5B57;&#x7B26;&#x4E32;B : a b a b b &#x7EA6;&#x5B9A;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5E8F;&#x53F7;&#x4E3A;1&#x3002; &#x7136;&#x540E;&#x663E;&#x7136;A&#x5728;1 2 3&#x5904;&#x4E0D;&#x5339;&#x914D;&#x3002;     In">
+<meta property="og:description" content="KMPKMP(Knuth - Morris - Pratt)&amp;#x7B97;&amp;#x6CD5;&amp;#x662F;&amp;#x4E00;&amp;#x79CD;&amp;#x80FD;&amp;#x5728;$\Theta(n + m)$&amp;#x65F6;&amp;#x95F4;&amp;#x5185;&amp;#x8FDB;&amp;#x884C;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x5339;&amp;#x914D;&amp;#x7684;&amp;#x7B97;&amp;#x">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/0060lm7Tly1fpd96td5szj30b4028web.jpg">
-<meta property="og:updated_time" content="2018-03-15T01:42:35.623Z">
+<meta property="og:updated_time" content="2018-03-15T01:42:35.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#x57FA;&#x7840;&#x5B57;&#x7B26;&#x4E32;">
-<meta name="twitter:description" content="KMPKMP(Knuth - Morris - Pratt)&#x7B97;&#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x80FD;&#x5728;$\Theta(n + m)$&#x65F6;&#x95F4;&#x5185;&#x8FDB;&#x884C;&#x5B57;&#x7B26;&#x4E32;&#x5339;&#x914D;&#x7684;&#x7B97;&#x6CD5;&#x3002; &#x5176;&#x57FA;&#x672C;&#x601D;&#x60F3;&#x662F;&#x6784;&#x9020;&#x4E00;&#x4E2A;Next[]&#x6570;&#x7EC4;&#xFF0C;&#x8868;&#x793A;&#x5728;i&#x4F4D;&#x7F6E;&#x5339;&#x914D;&#x4E32;&#x5931;&#x914D;&#x65F6;&#x8DF3;&#x8F6C;&#x5230;Next[i]&#x3002; &#x4E3E;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;  &#x6709;&#x5B57;&#x7B26;&#x4E32;A : a a a a b a b a b b a &#x5B57;&#x7B26;&#x4E32;B : a b a b b &#x7EA6;&#x5B9A;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5E8F;&#x53F7;&#x4E3A;1&#x3002; &#x7136;&#x540E;&#x663E;&#x7136;A&#x5728;1 2 3&#x5904;&#x4E0D;&#x5339;&#x914D;&#x3002;     In">
+<meta name="twitter:description" content="KMPKMP(Knuth - Morris - Pratt)&amp;#x7B97;&amp;#x6CD5;&amp;#x662F;&amp;#x4E00;&amp;#x79CD;&amp;#x80FD;&amp;#x5728;$\Theta(n + m)$&amp;#x65F6;&amp;#x95F4;&amp;#x5185;&amp;#x8FDB;&amp;#x884C;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x5339;&amp;#x914D;&amp;#x7684;&amp;#x7B97;&amp;#x">
 <meta name="twitter:image" content="http://ww3.sinaimg.cn/large/0060lm7Tly1fpd96td5szj30b4028web.jpg">
 
 
@@ -156,7 +156,7 @@
 
 
 
-  <title>&#x57FA;&#x7840;&#x5B57;&#x7B26;&#x4E32; | Euphoria</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>&#x57FA;&#x7840;&#x5B57;&#x7B26;&#x4E32; | Euphoria</title>
   
 
 
@@ -174,7 +174,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -469,7 +469,7 @@
 <p>&#x53EF;&#x5F97;&#x5230;$p_i = min(p_{2id - i},mx - i) \ (mx &gt; i)$ &#x3002;</p>
 <p>&#x677F;&#x5B50;(<a href="https://www.luogu.org/problemnew/show/P3805" target="_blank" rel="noopener">Luogu P3805</a>)&#xFF1A;</p>
 <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> N 41001100</span></span><br><span class="line"><span class="keyword">char</span> S[N],T[(N &lt;&lt; <span class="number">1</span>) + <span class="number">20</span>];<span class="keyword">int</span> p[N],s,t,mx = <span class="number">0</span>,id = <span class="number">0</span>,ml = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,S + <span class="number">1</span>);</span><br><span class="line">    s = <span class="built_in">strlen</span>(S + <span class="number">1</span>);</span><br><span class="line">    T[<span class="number">0</span>] = <span class="string">&apos;$&apos;</span>,T[<span class="number">2</span> * s + <span class="number">1</span>] = <span class="string">&apos;#&apos;</span>;<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= s;i++) T[i * <span class="number">2</span> - <span class="number">1</span>] = <span class="string">&apos;#&apos;</span>,T[i * <span class="number">2</span>] = S[i];t = <span class="number">2</span> * s + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= t;i++)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">if</span>(mx &gt; i) p[i] = <span class="built_in">std</span>::min(p[id * <span class="number">2</span> - i],mx - i);</span><br><span class="line">        <span class="keyword">else</span> p[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(T[i + p[i]] == T[i - p[i]])p[i]++;</span><br><span class="line">        <span class="keyword">if</span>(p[i] + i &gt; mx)mx = p[i] + i,id = i;</span><br><span class="line">        ml = <span class="built_in">std</span>::max(ml,p[i] - <span class="number">1</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ml);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacityDefault":1,"opacityOnHover":0.7}});</script>
       
     </div>
     
@@ -488,9 +488,9 @@
           
             <a href="/tags/OI/" rel="tag"># OI</a>
           
-            <a href="/tags/&#x5B57;&#x7B26;&#x4E32;/" rel="tag"># &#x5B57;&#x7B26;&#x4E32;</a>
-          
             <a href="/tags/&#x677F;&#x5B50;/" rel="tag"># &#x677F;&#x5B50;</a>
+          
+            <a href="/tags/&#x5B57;&#x7B26;&#x4E32;/" rel="tag"># &#x5B57;&#x7B26;&#x4E32;</a>
           
         </div>
       
@@ -896,23 +896,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax --><script type="text/x-mathjax-config">
-  MathJax.Hub.Config("");
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="custom_mathjax_source">
-</script>
-<!-- End: Injected MathJax -->
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
@@ -922,4 +906,4 @@
 
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body></html><!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacityDefault":1,"opacityOnHover":0.7}});</script></body></html>
