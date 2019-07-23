@@ -7,7 +7,7 @@
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
@@ -92,7 +92,7 @@
 <meta property="og:image" content="gcc314.xyz/2019/07/23/通用技术-触发器学习笔记/3.jpg">
 <meta property="og:image" content="gcc314.xyz/2019/07/23/通用技术-触发器学习笔记/ke.png">
 <meta property="og:image" content="gcc314.xyz/2019/07/23/通用技术-触发器学习笔记/rs1.png">
-<meta property="og:updated_time" content="2019-07-23T06:25:16.199Z">
+<meta property="og:updated_time" content="2019-07-23T07:25:40.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[通用技术] 触发器学习笔记">
 <meta name="twitter:description" content="逻辑门作业真实难的一批">
@@ -132,7 +132,7 @@
 
 
 
-  <title>[通用技术] 触发器学习笔记 | gcc314.xyz</title>
+  <title>[通用技术] 触发器学习笔记 | gcc314.xyz</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -151,7 +151,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -360,9 +360,6 @@
       
         <p>逻辑门作业真实难的一批</p>
 <a id="more"></a>
-
-
-
 <h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>还没放暑假的时候，我们发到了通用暑假作业。</p>
 <p>然后我某一天写起了这该死的<del>甜美的</del>试卷。</p>
 <p><img src="1.jpg" alt="1"></p>
@@ -378,8 +375,77 @@
 <p><img src="ke.png" alt="ke"></p>
 <p>这个图里面好像混进去了这个玩意儿。打开声音后听到它叫 <code>触发器</code>。</p>
 <p>所以就写了这玩意儿。</p>
-<h2 id="RS触发器"><a href="#RS触发器" class="headerlink" title="RS触发器"></a>RS触发器</h2><p>我们之前看到的东西就是<code>RS触发器</code>，它貌似是触发器中最基础的一个。</p>
+<h2 id="RS触发器"><a href="#RS触发器" class="headerlink" title="RS触发器"></a>RS触发器</h2><p>我们之前看到的东西就是<code>RS触发器</code> (Reset-Set Trigger)，它貌似是触发器中最基础的一个。</p>
 <p><img src="rs1.png" alt="rs1"></p>
+<p>如图，它由两个与非门组成（貌似可以用或非门实现但是这里不讨论）。</p>
+<p>输入端有<code>置0端(R)</code>和<code>置1端(S)</code>。</p>
+<p>输出端有<code>Q</code>和<code>Q’</code>（<code>Q’</code><del>在本文外</del>一般写作 $ \bar Q $ <del>只是打上划线不方便所以懒得打233</del>）。</p>
+<p>来分析一下（我们再偷个懒把 $\bar { Q }$ 打成 $ Q’ $ (不然会和非运算产生歧义)）：</p>
+<p><code>Q</code>在 $ n + 1 $ 时刻的状态 $ Q<em>{n + 1} = \overline{Q</em>{n}’ \cdot S_{n}}$</p>
+<p>而 $ Q<em>{n}’ = \overline{Q</em>{n} \cdot R_{n}} $ </p>
+<p>就得到递推关系： $ Q<em>{n + 1} = Q</em>{n} \cdot R_{n} + \bar{S_n} $</p>
+<p>写个状态表：</p>
+<table>
+  <tr>
+    <th colspan="3">Input</th>
+    <th>Output<br></th>
+    <th rowspan="2">Function</th>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>S</td>
+    <td>Qn</td>
+    <td>Qn+1</td>
+  </tr>
+  <tr>
+    <td rowspan="2">0</td>
+    <td rowspan="2">0</td>
+    <td>0</td>
+    <td>x</td>
+    <td rowspan="2">Undefined</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>x</td>
+  </tr>
+  <tr>
+    <td rowspan="2">0</td>
+    <td rowspan="2">1</td>
+    <td>0</td>
+    <td>0</td>
+    <td rowspan="2">Set status 0</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td rowspan="2">1</td>
+    <td rowspan="2">0</td>
+    <td>0</td>
+    <td>1</td>
+    <td rowspan="2">Set status 1</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td rowspan="2">1</td>
+    <td rowspan="2">1</td>
+    <td>0</td>
+    <td>0</td>
+    <td rowspan="2">Keep status</td>
+  </tr>
+  <tr>
+    <td>1<br></td>
+    <td>1</td>
+  </tr>
+</table>
+
+<p>发现其中R=S=0时输出未定义，没有在网上找到比较好的解释。</p>
+<p>有两种说法：操作同时将Q置为0和1；操作使Q和Q’不互补。</p>
+<h2 id="JK触发器"><a href="#JK触发器" class="headerlink" title="JK触发器"></a>JK触发器</h2><p>不想学了下次再说。</p>
 
       
     </div>
@@ -570,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Intro"><span class="nav-number">1.</span> <span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RS触发器"><span class="nav-number">2.</span> <span class="nav-text">RS触发器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Intro"><span class="nav-number">1.</span> <span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RS触发器"><span class="nav-number">2.</span> <span class="nav-text">RS触发器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JK触发器"><span class="nav-number">3.</span> <span class="nav-text">JK触发器</span></a></li></ol></div>
             
 
           </div>
@@ -711,7 +777,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
